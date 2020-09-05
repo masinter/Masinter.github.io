@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1043620-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1043620-1');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Larry Masinter's talks, publications, activities</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet"
+      href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+    <!-- SEO -->
+    <meta name="description"
+      content="Annotated bibliography of talks, presentations, tutorials, and other activities of Larry Masinter. Topices include Parkinson's, Standards, W3C, IETF, File Formats, MIME types, PDF, RFCs, metadata, XMP, Forms, XForms, Internet Fax, HTTP, HTCPCP, HyperText Coffee Pot Control Protocol, 418 I'm a teapot, Content negotiation, Lisp, Interlisp-D, Common Lisp, X3J13, HTTP-WG, Internationalized Resource Identifiers, IRI, Digital Preservation, Long-Term Archiving, Secret Sharing">
+    <meta name="Robots" content="index, follow">
+    <link rel="Canonical" href="https://LarryMasinter.net/">
+    <!-- Theme fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700" />
+    <!-- end fonts -->
+    <link rel="stylesheet" href="theme.css">
+  </head>
+  <body data-spy="scroll" data-target="#toc">
+    <!-- START: Header -->
+    <header class="site-header">
+      <div class="container text-center text-md-left">
+        <div class="personal-info clearfix">
+          <a href="#"> <img src="images/larry.gif" class="float-left" alt="Larry Masinter"></a>
+          <div class="infos float-left">
+            <h3><a href="#">Larry Masinter</a></h3>
+            <p class="p-info">
+              Email: <a href="mailto:LMM@acm.org">LMM@acm.org</a><br>
+              Blog: <a href="https://masinter.blogspot.com/">Masinter Musings</a><br>
+              Social Media: <a target="_blank" href="https://www.facebook.com/people/Larry-Masinter/786945365" class="btn-social facebook"></a>
+              <a target="_blank" href="https://twitter.com/masinter" class="btn-social twitter"></a>
+              <a target="_blank" href="https://www.linkedin.com/in/masinter/" class="btn-social linkedin"></a> <br> 
+              Other links: <a target="_blank" href="https://www.github.com/masinter">GitHub</a>, 
+				<a target="_blank" href="https://en.wikipedia.org/wiki/Larry_Masinter">Wikipedia</a>
+              </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="site-main">
+      <div class="container">
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <h2 id="summary">About me</h2>
+            <p>Welcome to my web page, which documents some of my work on web &amp; related Internet standards, documents and their formats, and older work on AI and Lisp,</p>
+            <p> See <a href="https://www.linkedin.com/in/masinter">my LinkedIn profile</a> for resum&eacute;-like things (education, work history) and <a href="https://masinter.blogspot.com">my blog</a> for essays on various topics. 
+              I'll post on <a href="https://www.facebook.com/people/Larry-Masinter/786945365">facebook</a> but mainly set to only readable by Facebook friends. I have only one video in my <a href="https://www.youtube.com/channel/UC6pP_M1W11cWiABPtUMWbEA">YouTube channel</a>. Email me at <a href="mailto:LMM@acm.org">LMM@acm.org</a> (not Imm). You can <a href="https://en.wikipedia.org/wiki/Larry_Masinter" target="_blank">look me up on Wikipedia</a>, but there are <a href="https://masinter.blogspot.com/2019/12/ive-been-wikipediad.html">lots of errors (help!)</a>. </p>
+            <h2 id="projects">Recent Projects</h2>
+            <p>This section lists some unfinished projects that I've been working on (or at least thinking about) lately.</p>
+            <ul>
+            <li>Helping restore <a href="https://interlisp.org">Interlisp-D</a> to usability on modern OSes.
+				  I'm thinking of this as a kind of
+                "vintage software" project, to try to recapture the sense of fluidity in the development cycle that
+                I've not encountered since. I'd like to coordinate with the Computer History Museum
+                and/or the Internet Archive.
+              </li>  <li><a href="https://going-remote.info" target="new">Going Remote (https://going-remote.info)</a> is a new discourse forum for people who were suddenly called to &quot;go remote&quot; or help others do so. An offshoot if <a href="https://w3.org">W3C</a> <a href="https://www.w3.org/community/covid-19/">COVAD-29: Remote Meet, Work, Class Community Group </a> exploring ideas for helping out people wanting to "go remote". Check it out!<a href="https://goingremote.internetforum.info/"></a></li>
+              <li><a href="#parkinsons">Apps and other software to support PWP</a> (People With Parkinson's). </li>
+			    <li>Do a better job of curating a <a href="https://www.google.com/search?q=site%3Aelon.edu+masinter"> bunch of videos of my opinion in 2015</a> done at an IETF by what I assume was a class project <a href="http://www.elon.edu/e-web/imagining/event-coverage/ietf_2015/sunny_cloudy_stormy_internet.xhtml">Elon University</a> school of communications. I Also found a <a href="http://www.elon.edu/predictions/prediction2.aspx?id=JQA-0048">1995 Prediction</a> there.</li>
+
+              
+              <li>A paper on a <a href="https://docs.google.com/document/d/1T0DRIZGX7Kh52u_S7at6Yeb-TiCGL3pmknr1XaVEx3s/edit?usp=sharing">theory of document formats</a> with
+				  a focus on how formats evolve over time. It covers a lot of ground. Again, comments are welcome.
+				  <!-- 
+                Metadata is a way of preserving context. Trust is an inclination to beleve
+                assertions of the trusted party. Move away from denotation semantics and a
+                possible worlds model to one based on Shannon-style information theory.
+                The nature of the evolution of Standards vs. evolution of Open Source,
+                depending on the authority of the ownership of well-known names like &quot;http&quot; or &quot;GET&quot;. 
+                 -->
+              </li>
+              <li><a href="#preservation">Long-term archiving of documents</a>. If we are going to live in an all-digital world, we have to have a way of keeping documents for hundreds of years with little risk of accidental or malicious destruction	or unintended distribution. 
+              </li>
+              <li>Along the way, I want to archive all my own stuff: papers, notes, memos,
+                private documents, emails. Lots Of Copies Keeps Stuff Safe (LOCKSS) is my main guide: documents in DropBox, photos in iCloud, email in GMail; scan, save and then recycle all physical media.
+              </li>
+                            <li>Fixing up my web and social media presence. I worked with two web designers on 
+                <a href="https://fiverr.com">fiverr.com</a> to create a usable site that
+                would work well on mobile, organized by topic. I've kept the use of
+                bootstrap.js, but moved to using a bootstrap plugin for
+                table-of-contents. I still have a lot of editing to do, and I want to link the blog and this site by relevant keywords. Comments &amp; suggestions welcome: What do you think?  Perusing <a href="https://www.saildart.org/LMM"  > my files in the saildart archives</a> -- looks like it requires some archeology. For example <a href="https://www.saildart.org/RESUME[1,LMM]">a personal history from 1973</a>.
+              </li>
+				<li><a href="#i18n">Internationalization</a> of URLs: there are multiple, overlapping, incomplete, and incompatible standards published by organizations that don't coordinate well. One idea that I'd like to develop is an idea for a service that could tell someone thinking of creating a non-ASCII URL how currently deployed systems would treat the URL, taking into account how they display, compare or their users would transcribe the URL.
+              </li>
+				<li>Explaining the jokes of <a href="https://tools.ietf.org/html/rfc2324">RFC 2324, HTCPCP</a> (The “HyperText Coffee Pot Control
+				  Protocol”), and what  I was poking fun of, at the time.  Error 418 "I'm a teapot" has <a href="https://www.amazon.com/s?k=418+teapot+error">taken on a life of its own</a>. See <a href="https://docs.google.com/document/d/1dzXfqjH1XRaEWh8keUhlg7BXrQYAUaePFNY8Z5thhgg/edit?usp=sharing" title="HTCPCP Explained" target="_blank">HTCPCP Explained</a> for a first pass. </li>
+			  <li>Working on Open Data and Open Documents. Documents are a means for communicating information to people. Communicating information to software, not as helpful. Is it possible to extend document formats so they can carry data in a more useful form?</li>
+
+		    </ul>
+	    <h2 id="parkinsons">Parkinson's</h2>
+			 <p> I've had Parkinson's since 2004, but doing well (lately) living with the condition.
+			  I've <a href="http://masinter.blogspot.com/2018/01/">blogged</a> about my surgery.
+	          I've been doing some investigation of software / systems to support people with the condition (and other chronic ailments.) It's a complex condition requiring management of medication and exercise to stay mobile. 
+					At a <a href="https://www.pwr4life.org/pwr-retreat/">recent retreat</a> I was encouraged by the progress that comes with focused exercise.</p>
+				<ul>
+					<li>See <a href="https://docs.google.com/document/d/1DPwR3RjPyvtzTBDGYCugN3ZvtFq6rJrWtOovtNY8QTQ/edit?usp=sharing" target="_blank">Notes on Parkinson's Exercise and online aids</a> for some research notes.</li>
+			  </ul>
+            <h2 id="web-standards">Web Standards</h2>
+            <p>A good chunk of my career has been around Standards, especially 
+              for the Web&#8212;&ldquo;arguing about how the web should work&rdquo;.
+            </p>
+            <!-- URL, URI, IRI, URN -->
+            <h3 id="URL">URL, URI, IRI, URN</h3>
+            <p>The key invention of the web: using URLs for hypertext. You'd
+              think the standards for URLs would be simple, but this
+              fundamental part of he web still has problems.
+            </p>
+            <ul>
+              <li>(2015) <a href="https://tools.ietf.org/html/draft-ruby-url-problem"
+                target="_blank">URL problem statement and directions</a></li>
+              <li>(2015) <a href="https://tools.ietf.org/html/rfc7595">Guidelines
+                and Registration Procedures for New URI Schemes</a>.
+              </li>
+              <li>(2011) <a href="https://tools.ietf.org/html/draft-masinter-dated-uri"><b>masinter-dated-uri</b></a>
+                The "tdb" and "duri" URI schemes.
+              </li>
+              <li>(2010) <a href="https://tools.ietf.org/html/draft-ietf-iri-3987bis"><strong>ietf-iri-3987bis</strong></a>
+                Internationalized Resource Identifiers (IRIs),
+                in <a href="https://tools.ietf.org/wg/iri/charters">IRI working
+                group</a> (abandoned)
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc6068"><b>RFC
+                6068 </b></a>"The 'mailto' URI Scheme", M. Duerst,
+                L. Masinter, J. Zawinski, 2010.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc4395"><b>RFC
+                4395 </b></a>"Guidelines and Registration Procedures for New URI
+                Schemes", Tony Hansen, Ted Hardie, Larry Masinter, 2006.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc3986"><b>RFC
+                3986</b></a> "Uniform Resource Identifier (URI): Generic
+                Syntax", Tim Berners-Lee, Roy Fielding, Larry Masinter,
+                2005.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc3553"><b>RFC
+                3553</b></a> "An IETF URN Sub-namespace for Registered
+                Protocol Parameters." Michael Mealling, Larry Masinter, Ted
+                Hardie, Graham Klyne, 2003.
+              </li>
+              <li>(until 1995)
+                chair <a href="https://www6.ietf.org/wg/concluded/uri.html">URI
+                working group</a>, defining standards for locating, naming, and
+                describing resources on the Internet.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2972"><b>RFC
+                2972</b></a> "Context and Goals for Common Name Resolution",
+                N. Popp, M. Mealling, L. Masinter, K. Sollins, 2000. Who owns
+                a name? At the time, I was also on the technical advisory
+                board of <a href="http://en.wikipedia.org/wiki/RealNames">RealNames</a>.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2732"><b>RFC
+                2732</b></a> "Format for Literal IPv6 Addresses in URL's",
+                R. Hinden, B. Carpenter, L. Masinter. December 1999.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2718"><b>RFC
+                2718</b></a> "Guidelines for new URL Schemes". L. Masinter,
+                H. Alvestrand, D. Zigmond, R. Petke. November 1999
+              </li>
+              <li>(1999 talk) <a href="9909-twist.pdf">Problems URIs don't
+                solve</a>. Presentation
+                at <a href="http://isr.uci.edu/events/twist/twist99/"> TWIST
+                99</a>, The Workshop on Internet-scale Software Technologies,
+                Internet Scale Naming.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2397"><b>RFC
+                2397</b></a> "The 'data' URL scheme." L. Masinter. August,
+                1998.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2396"><b>RFC
+                2396</b></a> "Uniform Resource Identifiers (URI): Generic
+                Syntax." T. Berners-Lee, R. Fielding, L. Masinter, August
+                1998.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2368"><b>RFC
+                2368</b></a> "The mailto URL scheme." P. Hoffman, L. Masinter,
+                J. Zawinski. July, 1998.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc1738"><b>RFC
+                1738</b></a> "Uniform Resource Locators (URL)."
+                T. Berners-Lee, L. Masinter &amp; M. McCahill. 1994.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc1737"><b>RFC
+                1737</b></a> "Functional Requirements for Uniform Resource Names."
+                K. Sollins &amp; L. Masinter. 1994.
+              </li>
+            </ul>
+            <h3 id="i18n">Internationalization</h3>
+            <ul>
+              <li>(2000) <a href="0003url-i18n-for-idn.pdf">Internationalization of URLs</a>, a
+                summary for the <a href="https://www6.ietf.org/wg/concluded/idn.html">Internationalized
+                Domain Name</a> working group.
+              </li>
+              <li>(1996) organizing committee for <a
+                href="http://www.w3.org/pub/WWW/International/Sevilla-96/"> Web
+                Internationalization and Multilingualism Symposium</a>
+              </li>
+              <li>(1996)<a href="i18nweb.htm"> I18N issues in Web Standards</a></li>
+            </ul>
+            <!-- HTTP -->
+            <h3 id="HTTP">HTTP</h3>
+            <p>The primary way communication happens for the Web and many applications:</p>
+            <ul>
+              <li>(2015) <a href="1308-httpbis-hamburg.jpg">HTTPbis
+                working group</a>, trying to guide what happens
+                after HTTP/2.
+              </li>
+              <li>(2012) <a href="071203-HTTPbis.pdf">HTTP: how
+                we got here and where we should go</a>,
+                comments for HTTPbis working group at IETF 70,
+                Vancouver, BC, Canada.
+              </li>
+              <li>(until 2000)
+                chair <a href="https://www6.ietf.org/wg/concluded/http.html">HTTP
+                working group</a> which
+                developed <a href="https://tools.ietf.org/html/rfc2616"><b>RFC
+                2616</b></a> HTTP/1.1, which improved the performance and
+                reliability of the web significantly.
+              </li>
+              <li>(2000 talk) <a href="0003-http-extensions.pdf">Issues using HTTP
+                in Protocols</a>,
+                at <a href="http://www.w3.org/2000/03/xp65435/">Open meeting on
+                XML in protocols</a>.
+              </li>
+              <li>(2000 talk) <a href="0001HTTP-extensions.pdf">HTTP
+                Extensions</a> (risks of reusing HTTP for non-web
+                functions)
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2616">RFC 2616</a>
+                "Hypertext Transfer Protocol -- HTTP/1.1" R. Fielding, J. Gettys,
+                J. Mogul, H. Frystyk, L. Masinter, P. Leach, T. Berners-Lee.
+                1999.
+              </li>
+              <li>(1998/3/1) <a href="https://tools.ietf.org/html/rfc2324"><b>RFC
+                2324</b></a> "Hyper Text Coffee Pot Control Protocol
+                (HTCPCP/1.0)." An April 1 joke with a serious purpose -- to
+                spoof ways in which proposed HTTP extentions were
+                inappropriate.
+              </li>
+            </ul>
+            <!-- Web History -->
+            <h3 id="history">Web history</h3>
+            <ul>
+              <li>(2000) <a href="0003webweek.pdf">The Future of Web Standards and
+                Technologies</a>.
+                "Engineering the Web" symposium at Sun and AT&amp;T Web Week.
+              </li>
+              <li>(2000) <a href="0006-web-wap.pdf">Converging WAP and the Web</a>, talk about
+                eliminating divergence between Web and protocols for mobile devices (WAP at the
+                time.)
+              </li>
+              <li>(2003) <a href="0310timbl.html">Introduction of Tim Berners-Lee</a> for <a
+                href="http://www.computerhistory.org/exhibits/hall_of_fellows/tim_berners_lee/">Computer
+                History Museum award.</a>
+              </li>
+              <li>(1998) Tutorial: Internet Standards for the Web, <a href="talks/www7std1.pdf">Part
+                I</a> and <a href="talks/www7std2.pdf">Part II</a>, with <a
+                  href="talks/www7std-notes.pdf">notes</a>,
+                for <a href="http://www7.scu.edu.au/">7th World Wide Web Conference</a>.
+              </li>
+              <li>(1996) <a href="http://www.almaden.ibm.com/almaden/npuc97/1996/masinter.htm">Standards
+                and all that</a>, talk at the IBM Almaden New Paradigms for Using Computers
+                workshop.
+              </li>
+              <li>(1996) <a href="spie96/paper.html">Document Images on the Internet</a> for 1/96
+                SPIE conference.
+              </li>
+              <li>(1995) PARC Forum, <a href="docnetf.pdf">"Document Management and the Net"</a>.
+              </li>
+              <li>(1996) Tutorial, <a href="talks/www5stds.pdf">The State of Web Standards</a>,
+                WWW5 conference
+              </li>
+              <li>(1998) Tutorial: Internet Technologies for Digital Libraries. (available as a <a
+                href="eudl/index.html"> directory of pdf files</a>)
+              </li>
+              <li>(1996) <a href="dwlj.ppt">Digital Libraries, Document management, and the
+                World-Wide Web</a> keynote for Multi-Media Japan.
+              </li>
+              <li>(1995) <a href="doccommerce.html">Document Management and Electronic
+                Commerce</a> for an International
+                Conference on Electronic Commerce.
+              </li>
+              <li>(1995) <a href="https://www.internetsociety.org/history/1995/inet-95-honolulu/">INET'95</a>:
+                <a href="https://web.archive.org/web/20160103013257/http://www.isoc.org/inet95/proceedings/PAPER/243/abst.html"> Document Management,
+                Digital Libraries and the Web</a>.
+              </li>
+              <li>(1995) <a
+                href="http://www.acm.org/pubs/citations/journals/cacm/1995-38-4/p29-rao/">
+                Rich Interaction in the Digital Library.</a> CACM
+              </li>
+              <li>(1994) <a href="MOOGopher.pdf">Collaborative Information Retrieval: Gopher from
+                MOO</a> at INET'94. This application won <a href="gopher.gif">coolest
+                application</a> at <a href="http://prentissriddle.com/trips/gophercon1993.html">
+                GopherCon '93</a>; it was built in a text-based multi-player virtual world
+                called LambdaMOO.
+              </li>
+              <li>(1994) Produced   a <a href= "https://www.youtube.com/watch?v=JFcmzVGAJCs">video</a>
+                about the Internet
+              </li>
+              <li>(1989) <a href="89-system33-diagrams.pdf">System 33 notes</a></li>
+            </ul>
+            <!-- Semantic Web -->
+            <h3 id="semantic-web">Semantic Web</h3>
+            <ul>
+              <li>(1999) <a href="tasscc-keynote.pdf">Keynote Address: Building Internet Systems
+                of Lasting Value</a>.
+              </li>
+              <li><a href="http://www.w3.org/2001/tag/2011/12/evolution/">Evolution of the Web</a>
+                is an attempt to create a model of the standards development processes that are
+                more evolutionary.
+              </li>
+              <li>(2004) <a href="1204-philoweb.pdf">Philosophy and the Web </a>talk as part of
+                panel at PhiloWeb 2012.
+              </li>
+            </ul>
+            <!-- #/standards -->
+            <h2 id="formats">Formats: PDF, HTML, forms, Metadata</h2>
+            <p>What is a file format? A lot of my work has been in defining file formats, standards
+              around them, protocols for negotiating formats for subsequent communication.
+            </p>
+            <!-- PDF -->
+            <h3 id="PDF">PDF</h3>
+            <p>PDF, the Portable Document Format, was invented by Adobe folks
+              more than 25 years ago&#8212;older than the web. Perhaps there are
+              things we'd design differently today, but PDF is solid, widely
+              deployed, and actively maintained. For some purposes, there's
+              nothing like it. I've helped with some related efforts:
+            </p>
+            <ul>
+              <li><a href="https://www.w3.org/community/pdf-open-data/">PDF and
+                Open Data W3C Community Group</a> established to document "best
+                practices" for making data in PDF more accessible to simple
+                processing using readily available tools.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc8118">RFC8118</a>:
+                updated the registration of "application/pdf" primarily to show
+                the &quot;owner&quot; is now ISO (International Standards
+                Organization) and not Adobe. (also
+                see <a href="https://github.com/mrbhardy/pdfmime">GitHub
+                repo</a>).
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc7995">RFC7995: PDF
+                Format for RFCs</a>: The IETF is moving (slowly) to change its
+                document format(s); IETF specs will be published in PDF and HTML
+                (and XML), not just plain text. Note that the PDF file will
+                include the XML as an attachment.
+              </li>
+            </ul>
+            <!-- Metadata -->
+            <h3 id="Metadata">Metadata</h3>
+            <p>Metadata is data about data: e.g., for a phone call, who called
+              whom when; for a library book, the card catalog information. There
+              are different kinds of metadata, and different ways of associating
+              metadata with the data it describes.
+            </p>
+            <ul>
+              <li>
+                <a href="http://download.macromedia.com/pub/labs/xmplibrary/xmplibrary_dynamicmedia_partnerguide.pdf">(2006)
+                Adobe Partner's Guide to XMP for Dynamic Media</a>: (with
+                Steve Deach) developed library for managing workflow
+                metadata for compound objects and multimedia, including
+                temporal metadata (describing video, audio), and the
+                management of metadata through the creative process into
+                production and distribution -- part
+                of <a href="http://www.adobe.com/devnet/xmp/"> extensible
+                Metadata Platform (XMP)</a> support within Adobe Creative
+                Suite. Now <a href= "http://wwwimages.adobe.com/content/dam/acom/en/products/xmp/Pdfs/XMPAssetRelationships.pdf">
+                XMP: Introduction to Asset Relationships</a>
+              </li>
+            </ul>
+            <!-- Forms -->
+            <h3 id="forms">Forms</h3>
+            <p>Forms are an interesting component of
+              file formats because they imply a request for information, and span
+              the gap between User Interface and API.
+            </p>
+            <ul>
+              <li>(2015) <a href="https://tools.ietf.org/html/rfc2388"><strong>RFC
+                7578</strong></a> &quot;Returning Values from Forms:
+                multipart/form-data&quot;. <a href=
+                  "https://github.com/masinter/multipart-form-data">
+                https://github.com/masinter/multipart-form-data</a>
+                includes test tools.
+              </li>
+              <li><a href="http://www.w3.org/MarkUp/Forms">XForms</a> working
+                group
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2388"><b>RFC
+                2388</b></a> "Returning Values from Forms:
+                multipart/form-data." L. Masinter, 1998.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc1867"><b>RFC
+                1867</b></a> "Form-based File Upload in HTML." E. Nebel &amp;
+                L. Masinter. November 1995.
+              </li>
+            </ul>
+            <!-- Content Negotiation -->
+            <h3 id="conneg">Content Negotiation</h3>
+            <ul>
+              <li><a href="https://tools.ietf.org/html/rfc3470"><b>RFC
+                3470</b></a> "Guidelines For The Use of Extensible Markup Language
+                (XML) within IETF Protocols", S. Hollenbeck, M. Rose, L. Masinter,
+                2003.
+              </li>
+              <li>(2003) <a
+                href="http://www.w3.org/2003/08/binary-interchange-workshop/28-adobe.pdf">
+                Position on the Binary Interchange of XML Infosets</a> for
+                the <a href="http://www.w3.org/2003/08/binary-interchange-workshop/Report.html">W3C
+                workshop on Binary Interchange of XML Information Item
+                Sets.</a>
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc3778"><b>RFC
+                3778</b></a> "The application/pdf Media Type", Ed Taft, Jim
+                Pravetz, Steve Zilles, Larry Masinter, May 2004.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2854"><b>RFC
+                2854</b></a> "The 'text/html' Media Type", L. Masinter,
+                D. Connolly, 2000.
+              </li>
+              <li>(2002
+                presentation) <a href="020303delivery-context.pdf">Delivery
+                Context in Internet Protocols</a>,
+                and <a href="020211-delcontext.html">Position Paper</a>, for
+                W3C <a href="http://www.w3.org/2001/12/2002-03-05-di-workshop.html">Device
+                Independence Workshop on Delivery Context.</a>
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2938"><b>RFC
+                2938</b></a> "Identifying Composite Media Features", G. Klyne,
+                L. Masinter, 2000.
+              </li>
+            </ul>
+            <h2 id="otherStandards">IETF application-level standards</h2>
+            <p>Sometimes things don't work out or have more narrow applicability than expected.</p>
+            <ul>
+              <li>(1996) <a href="http://comparitech.net/webdav">WebDAV</a> working group</li>
+              <li><a href="https://tools.ietf.org/html/rfc2542"><b>RFC 2542</b></a> "Terminology
+                and Goals for Internet Fax." L. Masinter. 1999.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2534"><b>RFC 2534</b></a> "Media
+                Features for Display, Print, and Fax." L. Masinter, D. Wing, A. Mutz, K.
+                Holtman. 1999.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2532"><b>RFC 2532</b></a> "Extended
+                Facsimile Using Internet Mail." L. Masinter, D. Wing. 1999.
+              </li>
+              <li><a href="http://www.pwg.org/ipp">Internet Printing</a></li>
+            </ul>
+            <!-- Standards Organization & Processes -->
+            <h3 id="SDOs">IETF &amp; W3C</h3>
+            <p>Computers around the world from different origins work with
+              each other because everyone agrees how they should work. There's
+              not a separate Internet for Google, Microsoft, Amazon, Adobe. But
+              of course not everyone agrees; working out differences about the
+              future is standards work.
+            </p>
+            <ul>
+              <li><a href="https://www.ietf.org/">Internet Engineering Task
+                Force</a>. (See <a href="https://datatracker.ietf.org/person/Larry%20M%20Masinter" target="_blank">a list of IETF documents</a> where I'm listed as an author.) I was at one point a member of
+                the
+                <a href="http://trac.tools.ietf.org/area/app/trac/wiki/ApplicationsAreaDirectorate">Applications
+                Area Directorate</a>
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc7995">RFC 7995: PDF Format for RFCs</a> 
+              </li>
+              <li><a href="120317-rfc-format.pdf">Thoughts on RFC format (Presentation) </a></li>
+              <li>(2008-2012) <a href="https://www.w3.org/2001/tag/">W3C Technical Architecture
+                Group</a> (TAG)
+              </li>
+              <li>(2013) In a fit of hubris,
+                I <a href="iab-application.html">applied for a position on the
+                IAB</a>
+              </li>
+              <li>(1998-2001) <a href="http://www.w3.org/Press/1998/AdvisoryBoard">W3C
+                Advisory Board</a> work on W3C process, including TAG
+                charter.
+              </li>
+              <li>(2010) <a href="http://www.w3.org/2010/11/TPAC/HTMLnext-perspectives.pdf">HTML.Next
+                Panel talk W3C</a> TPAC Plenary, November 2010. Overview of
+                disagreements about what standards are for and how to write
+                them.
+              </li>
+              <li>
+                <a href="draft-ietf-newtrk-interop-reports-00.html"><b>newtrk-interop-reports</b></a>
+                "Formalizing IETF Interoperability Reporting", Larry Masinter,
+                October 2005.
+              </li>
+            </ul>
+            <!-- Governance and the Internet -->
+            <h3 id="Governance">Governance and the Internet</h3>
+            <p>The primary value of the Internet comes from the fact there is only one, with
+              everyone (and everything) connected. Governance (regulation, legislation) is local
+              and hierarchical: city, state, region, country, with interactions relegated to
+              treaties, negotiation, or worse. How can anyone offer a global
+              service and be subject to every constraint of every jurisdiction?
+            </p>
+            <ul>
+              <li>(2014) <a href="1401-strint.pdf">Position Paper</a> for <a
+                href="http://www.w3.org/2014/strint/">STRINT Workshop</a> ("Strengthening
+                the Internet Against Pervasive Monitoring").
+              </li>
+              <li> (2013) <a href="1307governance-conflict.pdf">Governance in Conflict</a>: 3
+                minute presentation of <a
+                  href= "http://www.w3.org/2001/tag/doc/governanceFramework-2012-07-19.html">Governance
+                and Web Architecture</a> document.
+              </li>
+              <li>(2013) <a href="http://www.w3.org/TR/publishing-linking/">Publishing and Linking
+                on the Web</a> (with W3C TAG): An example of some governance issues at the
+                application layer.
+              </li>
+              <li>(2012) <a href="http://www.w3.org/2001/tag/doc/governanceFramework.html">Governance
+                and Web Architecture</a> (W3C TAG Editor's draft). A framework for approaching
+                the topic.
+              </li>
+            </ul>
+ 
+            <h2 id="Cloud">Cloud services</h2>
+            <ul>
+              <li>(1997) 20 years ago (at Xerox), I led
+                a <a href="97-doccom-xerox.pdf">'documents.com' project</a> which
+                proposed a Software as a Service offering;
+                see <a href="97-doccom-deck.pdf">presentation</a>. Any earlier
+                'clouds'? The important part was the plan to charge per 'click'
+                (microservice), in the same way that Xerox made money per-page
+                (selling supplies and service).
+              </li>
+            </ul>
+            <!-- Internet of Things -->
+            <h2 id="IOT">Internet of Things</h2>
+            <ul>
+              <li>(2001)<a href="0103-ipac-history.pdf"> History of Internet
+                Personal Appliances in IETF</a>. Short talk at IETF IPAC
+                (Internet Personal Appliance Control) session.
+              </li>
+              <li><a href="https://tools.ietf.org/html/rfc2324">RFC
+                2324</a>, the "HyperText Coffeepot Control
+                Protocol" (1998). A satire on the many bad API
+                designs being proposed.
+              </li>
+            </ul>
+            <h2 id="preservation">Digital Preservation</h2>
+            <p>How do you save documents for a long time? Life insurance
+              policies, plans for buildings, personal health records.
+            </p>
+            <ul>
+              <li>(2006) <a href="0603-archiving.pdf">A System for Long-Term
+                Document Preservation</a> took a different approach to
+                removing single point of failure by spreading content
+                around, not relying on encryption for confidentiality.
+              </li>
+              <li>(2005) <a href="0508-ltans.pdf">Requirements for Data
+                Validation and Certification Services</a>, (presentation). A
+                notary is someone who you can use to prove that a document
+                existed, was signed, on a particular date.
+              </li>
+            </ul>
+            <h2 id="Lisp">Lisp</h2>
+	    <p>40 years ago, it was said Lisp was the second oldest programming language
+	      in common use (FORTRAN being the oldest), but I'm not
+	      sure that's still true. </p>
+            <h3 id="interlisp">Interlisp</h3>
+            <p>Through around 1986 I worked on an evolving code base for Interlisp,
+              a integrated software development environment for (IDE) Lisp programming, written in
+              Lisp.
+            </p>
+            <ul>
+              <li>(1992) <a href="https://awards.acm.org/award_winners/masinter_3814811">ACM
+                Software System Award</a> for our work on the Interlisp
+                programming environment.
+              </li>
+              <li>(1986) <a
+                href="http://www.acm.org/pubs/citations/proceedings/oops/28697/p17-bobrow/">CommonLoops:
+                merging Lisp and object-oriented programming</a>, OOPLSA '86.
+                Conference proceedings on Object-oriented programming systems,
+                languages and applications
+              </li>
+              <li>(1983) <a href="86-interlisp-manual-opt.pdf">
+                Interlisp Reference Manual</a> (one of many editions)
+              </li>
+              <li>(1982) Richard P. Gabriel, Larry Masinter. <a
+                href="http://portal.acm.org/citation.cfm?id=802143"> Performance of Lisp
+                Systems.</a> ACM Symposium on LISP and Functional Programming.
+              </li>
+              <li>(1981) Warren Teitelman, Larry Masinter. <i><a href="interlisp-ieee.pdf">The
+                Interlisp Programming Environment</a>.</i> IEEE Computer, April 1981.
+              </li>
+              <li><a href="stefik-loops.pdf">Selling Lisp machines ~1980</a>. If we could make a
+                computer with an operating system written in Lisp, can't we build a phone OS
+                written in JavaScript?
+              </li>
+              <li>(1980) <em><a href="thesis.pdf">Global Program Analysis in an Interactive
+                Environment</a> (PhD thesis).</em>
+              </li>
+              <li>(1980) <a href="80-doradolisp.pdf">Overview and Status of DoradoLisp</a>, 1980
+                Lisp conference.
+              </li>
+              <li>(1980) Larry Masinter, L. Peter
+                Deutsch. <a href="http://portal.acm.org/citation.cfm?id=802810">Local
+                Optimization in a Compiler for Stack-Based Lisp Machines.</a> Lisp
+                Conference. Stanford University.
+              </li>
+            </ul>
+            <!-- Common Lisp -->
+            <h3 id="comlisp">Common Lisp</h3>
+            <ul>
+              <li>(1988) <a href="http://www.softwarepreservation.org/projects/LISP/conference/iwoleas88/Masinter-CommonLispCleanup.pdf">Common
+                LISP Cleanup</a>. A description of the process of "cleaning up" the
+                Common Lisp standard. Did I invent the "Issue List" for standards?
+                See <a href="http://en.wikipedia.org/wiki/X3J13#Cleanup_Subcommittee">Wikipedia
+                article</a> and <a href="cl-cleanup-proposal.txt">cleanup proposal
+                template</a>.
+              </li>
+            </ul>
+
+            <h2      id="AI">Artificial Intelligence</h2>
+            <ul>
+              <li>(1985) <a href="85-ai-tutorial.pdf">AI Systems and Technologies</a>, (initial
+                part of) a 2-day tutorial I gave on the topic. I think page 4 is still true: "AI
+                is a goal, not a fact".
+              </li>
+              <li>Chief Scientist of Xerox Artificial Intelligence Systems</li>
+              <li><a href="lederberg-dendral.pdf">DENDRAL</a> project at Stanford</li>
+              <li>(1973) H. Brown,
+                L. Masinter, <a
+                  href="ftp://reports.stanford.edu/pub/cstr/reports/cs/tr/73/361/CS-TR-73-361.pdf"><em>An
+                Algorithm for the Construction of the Graphics of Organic
+                Molecules</em></a>, Stanford Computer Science Department,
+                STAN-CS-73-361.
+              </li>
+              <li>(1972) H. Brown, L. Masinter, L. Hjelmeland, <a
+                href="1972-CS-TR-72-318.pdf"><em>Constructive Graph Labeling Using Double
+                Cosets</em></a>, Stanford Computer Science Department, STAN-CS-72-318.
+              </li>
+            </ul>
+
+            <h2 id="otheractivities">Other Links</h2>
+            <ul>
+              <li>
+                <a href="http://fellows.acm.org/fellow_citation.cfm?id=3814811&amp;srt=year&amp;year=1999">ACM
+                Fellow</a> in 1999.
+              </li>
+              <li>Patents
+                <a href="http://www.google.com/patents/US9697229">9697229</a>,
+                <a href="http://www.google.com/patents/US8099445">8099445</a>,
+                <a href="http://www.google.com/patents/US7945784">7945784</a>,
+                <a href="http://www.google.com/patents/US7610315">7610315</a>,
+                <a href="http://www.google.com/patents/US7577689">7577689</a>,
+                <a href="http://www.google.com/patents/US7409405">7409405</a>,
+                <a href="http://www.google.com/patents/US5742807">5742807</a>,
+                <a href="http://www.google.com/patents/US6856432">6856432</a>.
+              </li>
+              <li>The IETF Applications Area chairs group sometimes had such boring meetings that
+                everyone <a href="apps-wg-chairs-980827/wg-chairs-doodles.html">doodled</a>.
+              </li>
+              <li>Xerox uses Dilbert to explain "<a href="empowerment.pdf">Empowerment</a>".</li>
+              <li><a href="larriad.html">The Larriad</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p class="text-center">
+          Larry Masinter &copy; 2019
+        </p>
+      </div>
+    </footer>
+    <!-- START: JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+  </body>
+</html>

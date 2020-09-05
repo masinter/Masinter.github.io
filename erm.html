@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base" />
+<style type="text/css">
+/**/
+   dt { font-weight: bold }
+/**/ 
+ td.author-text {font-size: x-small; }
+a.info {                /* This is the key. */
+                position: relative;
+                z-index: 24;
+                text-decoration: none;
+}
+ul.text {margin-left: 2em; margin-right: 2em; }
+</style>
+   
+<title>MIME, Extensibility, Registries</title>
+</head>
+
+<body>
+<h1>MIME, Extensibility, Registries
+</h1>
+<p>Larry Masinter for W3C TAG, 12/12/2011, draft for discussion, intended to become one or more TAG findings.</p>
+<p>This document is circulated as part of TAG</p>
+<ul>
+  <li> [<a href="https://www.w3.org/2001/tag/group/track/actions/595">ACTION-595</a>] Create a report on MIME and the web</li>
+  <li>[<a href="https://www.w3.org/2001/tag/group/track/actions/531">ACTION-531</a>] Draft document on architectural good practice related to registries</li>
+  <li>[<a href="https://www.w3.org/2001/tag/group/track/actions/636">ACTION-636</a>] Update product page for Mime and the Web</li>
+  <li>[<a href="https://www.w3.org/2001/tag/group/track/issues/41">ISSUE-41</a>] What are good practices for designing extensible languages and for handling versioning</li>
+  <li>[<a href="https://www.w3.org/2001/tag/group/track/issues/66">ISSUE-66</a>] The role of MIME in the Web Architecture</li>
+</ul>
+<p>Please discuss this document on <a href="mailto:www-tag@w3.org">www-tag@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/www-tag/">archived</a>).</p>
+<h2>Introduction</h2>
+<p>This document discusses evolution of the web, and makes (<em>proposes</em>) recomendations for best practices around managing evolution. In particular, it recommends practices for the use of MIME in the web, the establishment and use of registries, managing references among technical specifications which require stability in the face of evolution of other components.</p>
+<p>The value of the Internet and the Web is global communication among unrelated parties. Different implementations need to agree on the protocols, languages, and protocol elements in their communication for them to interoperate. Unmanaged evolution results in diminishing the interoperability of components, a cost to all which must be weighed against the benefits of evolution.</p>
+<p>There are a number of issues that need to be addressed to help achieve the goal of careful evolution and global interoperability in an evolving world. Those recommendations include attention to the way in which standards allow for extensibility by adding values and new meaning to their protocol elements<strong> </strong>used within them, guidelines for establishing and using registries, and a model for evolution in a way that a standards organization can lead in the managed evolution of the technology available to its implementations. </p>
+<h2>Managing Evolution in the Web</h2>
+<p>It is useful to consider evolution of different aspects of how the Web works and evolves, and to be precise in the terminology when discussing their evolution:</p>
+<dl>
+  <dt>protocol</dt>
+  <dd><strong></strong>a general term for the way in which agents interact. </dd>
+  <dt>language</dt>
+  <dd><strong></strong>a component of interaction in which one party sends some data (a &quot;document&quot; or &quot;representation&quot;) which is then interpreted by the receiver (for this document, a <strong>format</strong> is a kind of <strong>language</strong>).</dd>
+  <dt>protocol element</dt>
+  <dd><strong></strong>component of a <strong>protocol</strong> or <strong>language</strong>, where the syntax and semantics of the protocol element is described independently. Multiple <strong>protocols</strong> and <strong>languages</strong> may use the same <strong>protocol element</strong>.</dd>
+</dl>
+<dl>
+  <dt>implementation</dt>
+  <dd>Software installed by agents to manage the interaction with others.</dd>
+</dl><dl>
+  <dt>specification</dt>
+  <dd>a technical document which describes (some part of) a <strong>protocol</strong>, <strong>language</strong>, or<strong> protocol element</strong>, and gives rules for how <strong>implementations</strong> of them are expected to behave.</dd>
+  <dt>standard</dt>
+  <dd>a <strong>specification</strong> which has reached some level of agreement among those planning to build, maintain, or  use the <strong>implementations</strong> of the <strong>protocols</strong>, <strong>languages</strong> and <strong>protocol elements</strong></dd>
+  
+</dl>
+<p>To use these terms in context: <strong>protocols</strong> may include transmission of data intended by the sender to be interpreted by the reciever as an expression in a <strong>language</strong>. Using the same <strong>protocol element </strong>between languages and protocols benefits  linking multiple applications together. Protocols may be used to exchange instances of data in a language. Protocols and languages use protocol elements. Agents install implementations of protocols and languages to interact with other agents. In the web, some content (instances of a <strong>language</strong>) is created by a person typing at a keyboard.  HTTP is a <strong>protocol. </strong>RFC 2616 is a <strong>standard </strong>that describes it. HTTP supports transmission of data in a <strong>language</strong> where the <strong>language</strong> to be used is indicated by the &ldquo;content-type&rdquo; protocol element.  HTML is a <strong>language</strong>, the primary language used in the web. Other &ldquo;languages&rdquo; used in the web are JPEG, GIF, CSS, etc.</p>
+<p>Managing evolution of <strong>standards </strong>in a world where there are multiple <strong>implementations</strong> involves coordinating the evolution of these different aspects:</p>
+<dl>
+  <dt><strong>protocols</strong>, <strong>languages</strong>, <strong>protocol elements</strong></dt>
+  <dd>evolve as their common <strong>implementations</strong> evolve. </dd>
+  <dt><strong>implementations</strong> </dt>
+  <dd>evolve as their implementers of them create or adopt new features; in many cases, that evolution requires evolution or addition to the <strong>protocols</strong>,  <strong>languages</strong> and <strong>protocol elements </strong>the <strong>implementations</strong> use to communicate.</dd>
+  <dt><strong>standards </strong></dt>
+  <dd><strong></strong>evolve as their <strong>specifications</strong> evolve or are extended, and are agreed to; a new <strong>specification</strong> might lead <strong>implementations </strong>(proposing additions or changing) or follow <strong>implementations</strong> where the <strong>specification </strong>has been changed to match implementation behavior.</dd>
+</dl>
+<p>The process by which <strong>specifications </strong>become <strong>standards </strong>involves coordination between multiple parties, and significant review. Various means are used to assist the evolution of implementations while maintaining interoperability, without being unduly held back by the standards process.</p>
+<h2><a href="#Extensibility"></a><a name="Extensibility" id="Extensibility"></a>Extensibility and Identifiers</h2>
+<p> One way a <strong>standard</strong> can facilitate evolution is for to allow for extensibility in some of the <strong>protocol elements</strong> it uses – the ability to add new values for them that were not part of the <strong>protocol</strong> or <strong>language</strong> at the time the <strong>specification</strong> was written. </p>
+<p>The notion of an &quot;extensibility point&quot; is primarly an artifact of the process of writing specifications (standards). Languages often evolve organically, extensions happen when people ship implementations which implement the extension or provide content which contains the extension, etc. The notion of extensibility is primarily an artifact of wanting to have a stable document even in a period of rapid and widespread evolution and innovation.</p>
+<p>Some <strong>protocol elements</strong> used in <strong>languages</strong> and <strong>protocols</strong> have values which act as <strong>identifiers</strong>: their meaning is determined by a method which requires external information to process which is not all in-line. For example, in specifying a color</p>
+<ul>
+  <li>If Color supplied by three values (R, G, B), e.g.:  11,24,255
+        
+the values 11, 24, 255 have a direct value.</li>
+      <li> If Color is chosen from a set of color names:
+        (purple, orange, light yellow, red ...)
+        the names "purple" "orange" "light yellow" are <strong>identifiers</strong>.</li>
+</ul>
+<p>The web uses many <strong>protocol elements </strong>which are <strong>identifiers</strong>; for example, character entities in HTML, content-types, uri schemes,    color names, host names, html attributes to a given element,    country codes, HTTP headers, css rounded corners.[refs]. (see Appendix II for list).</p>
+    <p> There are a variety of ways of managing extensibility of <strong>identifiers</strong>, and establishing a mechanism for introducing
+  private (<strong>implementation</strong>) and/or public<strong> (standard</strong>) extensions.</p>
+
+    <dl>
+      <dt>in specification:</dt>
+      <dd>In  many cases, a <strong>specification </strong>limits the set of <strong>identifiers</strong> allowed in a <strong>protocol element</strong> to those explicitly descirbing the specification of the <strong>language </strong>or <strong>protocol</strong> using it; extending the set of values in the <strong>standard</strong> requires a new (version of the) <strong>specification</strong>. This still allows <strong>implementations</strong> to evolve, with the <strong>standard</strong> following.</dd>
+      <dd>&nbsp;</dd>
+      <dt>use a registry: </dt>
+      <dd>A <strong>registry </strong>a list, maintained by an organization or individual, which lists values of a <strong>protocol element </strong>and the meaning of that protocol element in the context of the <strong>languages </strong>or <strong>protocols </strong>that use it..</dd>
+      <dt>use a URI (IRI) as the identifier:</dt>
+      <dd> Some protocol elements use a URI to name an extensibility point, where the URI itself providing a mechanism for determining
+        the &quot;meaning&quot; of the extension [httpRange-14]. </dd>
+      <dt>use a &quot;vendor prefix&quot;:</dt>
+      <dd>A &quot;vendor prefix&quot; is a short string which identifies an organization which controls one or more <strong>implementations</strong>. The organization uses prefixed identifiers for those extensions that are unique to their implementation. As those extensions are made part of the <strong>standard</strong>, the unprefixed identifier is then substituted.</dd>
+      <dt>&nbsp;</dt>
+      <dt>use URI-named  namespace:</dt>
+      <dd> The protocol element uses an identifier in a way (with prefixes or scoped contexts or otherwise) where there is a URI-identified name space, and the meaning of individual identifiers are understood with respect to that namespace. This allows linking together multiple namespace values, and short identifiers.</dd>
+      
+    </dl>
+<h3><a name="considerations" id="considerations"></a>Considerations for choosing an extensibility method</h3>
+<p>The following considerations are important when designing a <strong>protocol element</strong> and the extensibility method to be used for it <em><strong>(this list needs development)</strong></em><strong></strong></p>
+<dl>
+  <dt>Lower cost of evolution:</dt>
+  <dd>Allow evoluition without requiring revising specification for every change (cost of review of change)</dd>
+  <dt>Preserve Interoperability:</dt>
+  <dd>don't confuse multiple private extensions</dd>
+
+  <dt>Matching reality:</dt>
+  <dd>Extension points can be registered without commitment to implementation, giving implementors little practical guidance</dd>
+  <dt>Discovery: </dt>
+  <dd>How may implementors discover which extensions are meaningful, important?</dd>
+  <dt>Timeliness:</dt>
+  <dd>There is a tension between establishing a long-lived extensibility point meaning, between cementing the value too soon (before consensus is reached) and too late (after widespread deployment), especially when those overlap (extensions are widely deployed before consensus is reached)</dd>
+  <dd>&nbsp;</dd>
+  <dt>Transition: </dt>
+  <dd>How can extensibility points be managed, updated, obsoleted? Can registered values be &quot;poached&quot;?</dd>
+  <dt>Lifetime:</dt>
+  <dd>Is the documentation and value of the registry entries as long-lived as the base document? How does this impact?</dd>
+  <dt>Fairness:</dt>
+  <dd>The process for extending a standard needs to have similar characteristics as the standard itself, in terms of &quot;fair&quot; and &quot;transparent&quot;.</dd>
+  <dt>Misuse &amp; Abuse:</dt>
+  <dd>Trademark, spam, denial of service, spam entries, ...</dd>
+</dl>
+<p><strong>Finding.defineExtensibility:</strong> Extensibility and evolution must be planned and provided for in <strong>specifications </strong>that become <strong>standards</strong>. <strong>standards </strong> that use <strong>identifiers </strong> should also specify the expected behavior of compliant <strong>implementations</strong> when confronted with unrecognized <strong>identifiers</strong>; for example, to distinguish between &quot;must understand&quot; and &quot;must ignore&quot; for
+unrecognized <strong>identifiers</strong>.  In the design of protocols with extensibility points, the guidelines
+  for dealing with &quot;unrecognized values&quot; are essential for controlling
+  extensibility. It is useful to provide some way of communicating
+  with agents which do not understand extensibility names by giving
+  explicit rules for how unrecognized names are to be dealt with
+(ignored, warned, looked up, etc.)</p>
+<h2>Evaluation of different extensibility methods against considerations</h2>
+<p>&nbsp;</p>
+<p><strong>In Specification</strong>: example, HTML element names. Low cost of implementation extension, higher cost of specification update, fairness depends on same standards process as anything else, long lifetime, transition from implementation -&gt; specification is painful but that's what standards are about.</p>
+<p><strong>Registry: </strong>(see Section Registries below). Cost of setting up registry, managing it, expert review, benefit of avoiding interactions, fairness issues, trademark &amp; spam. Allows using numbers and meaningless values to avoid trademark spam, and difficulties of internationalization.</p>
+<p><strong>Using URIs</strong>: Example: RDF. Meaning is discovered by httpRange14. Low cost (no registration process, might require maintaining URI. Very timely. Transition unnecessary. Lifetime up to lifetime of URI. Very fair. Hard to misuse because no registry. Preferred method, modulo longevity of URIs. Note that URN allows naming a registry as a URI.</p>
+<p><strong>Vendor Prefix: </strong>(example from CSS. Transition path difficulties outlined in [ref]</p>
+<p><strong>URI-named namespace</strong>: XML namespaces, RDF (?).</p>
+<p><strong>Summary: </strong>Maintaining a registry involves many long-term administrative difficulties. The simplest and most effective way of providing extensibility
+    is to use the space of URIs as the way of naming individual
+    extensibility points, and the &quot;meaning&quot; of the URI as a way of
+discovering what the value means. </p>
+<hr />
+<h2><a name="Registries" id="Registries">Registries</a> </h2>
+A registry consists of the documentation for a set of registered
+  values (usually identifiers) and their meaning, where the registry maintained by an
+  organization (the registrar) with a commitment to maintain the
+  registry and make it publically available.
+  
+  To ensure that quantities have consistent values and interpretations
+  across all implementations, their assignment must be administered by
+  an "authority": an organization or consortium which manages the values
+and insures proper administration.
+  <p>For example, The Internet Assigned Numbers Authority (IANA)[ref] is the primary
+  organization whose charter and purpose is to maintain registries of
+  values needed for Internet protocols and languages as defined by the
+  IETF.[ref BCP from which this was quoted]
+  
+  IANA administers the registry of many parameters in the core of the
+  Web architecture: the space of URI (and IRI) scheme names, the space
+  of media type identifiers ("MIME types"), a registry of HTTP protocol
+  header values, HTTP result codes, names of character sets and
+  character encoding schemes (charsets) and so forth.
+  
+  The architecture of the world wide web relies on extension points
+  using "registration", even in W3C-specified protocols, languages, and
+  formats which are not reviewed or published within the IETF.</p>
+  <h3>Detailed analysis of registries:</h3>
+<dl>
+  <dt>Update: </dt>
+  <dd>A registry has a specific update policy.</dd>
+  <dt>Matching reality:</dt>
+  <dd>Registries tend to go out of step with reality unless costs of registration or registry update are low and benefits are high to at least one of the parties authorized to make a registration or update. (See &quot;Divergence from Reality&quot; below).</dd>
+  <dt>Discovery: </dt>
+  <dd>Manual discovery is hindered by many alternative places to find a registry, and the possibility of alternative locations (Wikipedia for MIME types, for example.)</dd>
+  <dt>Timeliness:</dt>
+  <dd>In particular for registries, there is a tension between establishing a long-lived extensibility point meaning, between cementing the value too soon (before consensus is reached) and too late (after widespread deployment), especially when those overlap (extensions are widely deployed before consensus is reached). The policy needs to move toward &quot;registration before deployment&quot; independent of where in the standards cycle that holds. If the standard differs from early deployment, the registry should be updated to point to not only the standard but also the facts for what one might encounter &quot;in the wild&quot;.</dd>
+  <dd>&nbsp;</dd>
+  <dt>Transition: </dt>
+  <dd>If registries encode status in registered names (as the MIME registry does), transition and grandfathering are issues.</dd>
+  <dt>Lifetime:</dt>
+  <dd>The documents pointed to by IANA registry are not as long-lived as the registry itself, and much of the information is obsolete. See &quot;Registry Stability&quot; below.</dd>
+  <dt>Fairness:</dt>
+  <dd>IANA is capable of administering a &quot;fair&quot; process with a reasonable dispute reslution mechanism, if those are specified at the time the registry is established. Wikis and other methods for maintaining a registry have more (or at least different) potential for abuse.</dd>
+</dl>
+<p>&nbsp;</p>
+<p> The "best current practice" specification in [BCP 26][RFC 5226]
+  gives guidelines to protocol designers for establishing the registry
+  rules associated with an IANA registry. Note that IANA acts as the
+  operator of each registry, but itself does not evalute registry
+  requests, but merely adminmisters a process by which the organization
+  or individuals authorized to review or approve registry entries are
+  accepted. These guidelines apply to IANA namespaces established or
+  requested by W3C working groups or task forces.</p>
+<p>The following conclusions are reached:</p>
+<dl>
+  <dt>Finding.use-IANA:</dt>
+  <dd>W3C specifications SHOULD use IANA registration methods 
+    for those extensibility points which are shared with other
+    (IETF-managed) application protocols, rather than inventing their
+    own registries.</dd>
+  <dt>Finding.explicit:</dt>
+  <dd>Any extensibility points in a W3C specification MUST be
+    explicit about the method and management of the registration 
+    of new values in a public, fair, and transparent way.</dd>
+</dl>
+<h3><br />
+Divergence from Reality</h3>
+<p>
+  
+  In some cases, community practice has evolved and the registries have
+  not followed: the registries have not tracked the use of extensibility
+  parameters, or where extensibility values are often ignored. In some
+  cases, the registry is percieved as a bottleneck.If there is a registry, it is only useful if values are registered. A
+  registry which does not match actual use (as is currently the
+case with URI schemes, Media Types) is not very useful.  </p>
+<p>This has led to several practices and new situations:</p>
+<dl>
+  
+  <dt> Incomplete Inaccurate Registries:</dt>
+  <dd>The registry's values do not match what is widely used and deployed.</dd>
+</dl>
+<p>In response, the following recommendations are made:</p>
+<dl>
+  <dd>&nbsp;</dd>
+  <dd>&nbsp;</dd>
+  <dt>
+    
+    Finding.newRegistry:</dt>
+  <dd>Technical specifications that wish to override an existing registry
+    for some values and use it for another should (a) attempt to correct
+    the extensiting registry; in cases where it cannot, the group
+    should (b) establish a new &quot;override&quot; registry with new values,
+    where the spec points to the new registry. </dd>
+  <dt> Finding.evolveTowardSimplicity: </dt>
+  <dd>The specifications and standards process should be managed so that
+    over the long term sniffing is minmimized and deployment of further
+    misconfigured values is discouraged. </dd>
+</dl>
+<h3>Extensibility of Registry Values
+  
+</h3>
+   <p>Often, a registry does not contain the actual definition of the meaning of a term or value, but rather contains a pointer to a document or document series which defines that value. For example, the Internet Media Type registry defining file formats and languages often contains a pointer to the document or specification. However, specifications themselves update. And sometimes they &quot;fork&quot; -- there can be multiple competing definitions. (In some cases, &quot;forking&quot; is &quot;poaching&quot;). </p>
+   <p>Requiring the documentation to be stable is another reason why registrations diverge from reality; there is no stable document.</p>
+   <p>Formats and their specifications evolve over time. There are several reasons for the evolution: innovation, compatibility with other implementations, attempts to gain control. </p>
+   <p>Some times new evolutions are &quot;compatible&quot;, although compatibility has several variations. It is part of the responsibility of the designer of a new version of a file type to try to insure both forward and backward compatibility: new documents work reasonably (with some fallback) with old viewers and that old documents work reasonably with new viewers. In some cases this is accomplished, others not; in some cases, &quot;works reasonably&quot; is softened to &quot;either works reasonably or gives clear warning about nature of problem (version mismatch).&quot; </p>
+   <dl>
+     <dt>Finding.Series: </dt>
+     <dd>Registries should allow updates, and note warnings. In particular, documents rarely change without making a change which is incompatible in at least one direction (old content is invalid under the new definition, vs. new content is invalid or not processed interoperably in the old value.).</dd>
+     <dt>Finding.Forking:</dt>
+     <dd>If specifications are &quot;forked&quot; in incompatible ways, then use separate names for the forks. If the same name is used for multiple forks (specifications which diverge technically) and where different implementations are widely deployed, the registry should contain pointers to all of the different specification branches. This means that in those cases, the registry entry cannot be in the same document as a description of only one of the forks.</dd>
+   </dl>
+   <h3>Status of Registry Entry in Registry Name</h3>
+   <p>
+  
+  Registry values typically go through a life-cycle, where a parameter
+  is introduced experimentally, deployed in a limited or vendor-specific
+  context, and then adopted more broadly.
+   </p><p>
+  
+  Frequently, groups with registries or registered values attempt to
+  convey status of a registered value in the name chosen within the
+  registry, e.g., using an "x-" prefix for experimental names, "vnd."
+  prefixes in internet medai types, etc. In practice, these conventions
+  are failures, counter-productive, because there is no simple
+  deployment path when status changes, e.g., vendor proposed extension
+  become public standards, experiments succeed, etc.
+   </p>
+   <h3>Findings</h3>
+   <dl>
+     <dt>
+       
+     Finding.noStatusInName:</dt>
+     <dd> Do NOT attempt to encode parameter status in the name; do not use &quot;vnd.&quot;, or &quot;x-&quot;. </dd>
+     <dt>Finding.registrationEase:</dt>
+     <dd>There is a tradeoffs between requiring registry entries contain
+complete information and getting more things registered. In general, the cost of using unregistered values must be non-negligible to the organizations allowed or encouraged to register a value, if a distributed development community is to use the registry.</dd>
+   </dl>
+<h3>Organizational support: </h3>
+<p>
+  
+  W3C staff & working group participants must manage the registration
+  information, and that the process itself needs revisions.  Other
+  registrations have their own administrative procedure.
+   
+  
+  A regular &quot;have obligations related to registration been met&quot; check
+  into the W3C document publication/advancement procedure.</p>
+<hr />
+<h2><a name="MIME" id="MIME">MIME and the Web</a></h2>
+<p><em>(need to align with terminology above)</em></p>
+<p>Two important identifier value spaces in the web architecture come from MIME (the Multipurpose Internet Mail Exchange set of specifications): the &quot;Internet Media Type&quot; registry and the &quot;charset&quot; registry.</p>
+<dl>
+  <dd>&nbsp;</dd>
+  <dt><strong>MIME</strong></dt>
+  <dd><strong></strong>a framework for transmitting content within <strong>protocols</strong></dd>
+  <dt>Internet Media Type</dt>
+  <dd>(aka &quot;MIME type&quot;) the MIME system of naming <strong>languages</strong>. There is an  Internet Media Type <strong>registry</strong></dd>
+  <dt>content-type</dt>
+  <dd>A <strong>protocol element</strong> used in the HTTP protocol and in email which names the <strong>language </strong>of the transmission using its <strong>Internet Media Type</strong>, and, when necessary, some parameters</dd>
+  <dt>charset</dt>
+  <dd> A <strong>protocol element </strong>used many Internet protocols and languages, including in the <strong>content-type</strong> parameter of HTTP and within XML and HTML</dd>
+</dl>
+<p>MIME (&quot;Multipurpose Internet Mail Extensions&quot;) was invented  originally for email, based on general principles of &quot;messaging&quot; (a  foundational architecture framework). The role of MIME was to extend  Internet email messaging from ASCII-only plain text, to include other  character sets, images, rich documents, etc.) [RFC1521] , [RFC1522].    The basic architecture of complex content messaging is: </p>
+<ul>
+  <li>Message sent from A to B. </li>
+  <li>Message includes some data. Sender A includes standard 'headers'  telling recipient B enough information that recipient B knows how  sender A intends the message to be interpreted. </li>
+  <li>Recipient B gets the message, interprets the headers for the data  and uses it as information on how to interpret the data. </li>
+</ul>
+<p>&quot;MIME types&quot; (renamed &quot;Internet Media Types&quot; in later specs [RFC2046]  provide a way to describe  the content of a message so that it could be used to initiate  interpretation of a message. The &quot;Internet Media Type registry&quot; (MIME  type registry) is where someone can tell the world what a particular  label means, as far as the sender's intent of how recipients should  process a message of that type, and the description of a recipients  capability and ability for senders.</dt>
+</p>
+<h3>Differences between email and Web delivery</h3>
+<p>Some of the differences between the application contexts of email  and Web delivery determine different requirements: </p>
+<ul>
+  <li> In the Web, the transfer of data is initiated differently than in  email: the &quot;messages&quot; with labeled content are usually HTTP responses  to a specific (GET) request (although the request is itself a message,  GET has no content). In the most common case, then, the receiver knows  more about the data before it has been sent. </li>
+  <li> Clients would like to know more about the content before they  retrieve it. The &quot;tagging&quot; is often not sufficient to know, for  example, &quot;can I interpret this if I retrieve it&quot;, because of  versioning, capabilities, or dependencies on things like screen size  or interaction capabilities of the recipient. </li>
+  <li> Some content isn't delivered over the HTTP (files on local file  system), or there is no opportunity for tagging (data delivered over  FTP) and in those cases, some other ways are needed for determining  file type. </li>
+</ul>
+<p>Operating systems use (and continued to evolve) different systems  to determine the 'type' of something, different from the MIME tagging  and bagging: </p>
+<ul>
+  <li>'magic numbers': in many contexts, file types can be guessed  by looking for some unique string, number or pattern, which only  appears in files of that type. In circumstances where this was  a unique number, it was called a &quot;magic number&quot;, although this  concept has been extended to other textual patterns. </li>
+  <li>Originally MAC OS had a 4 character 'file type' and another 4  character 'creator code' for file types. </li>
+  <li> Windows evolved to use the &quot;file extension&quot; -- 3 letters (and then  more) at the end of the file name -- as the initial determination of  the oveall type of a file. This practice has now extended to other  systems. </li>
+</ul>
+<p>Information about these other ways of determining type (rather than  by the content-type label) were gathered for the Internet Media Type  registry; those registering types are encouraged to also describe  'magic numbers', Mac file type, common file extensions. However, since  there was no formal use of that information, the quality of that  information in the registry is haphazard. </p>
+<p>Finally, there was the fact that tagging and bagging might be OK  for unilaterally initiated (one-way) messaging, you might want to know  whether you could handle the data before reading it in and  interpreting it, but the Internet Media Types weren't enough to tell.</p>
+<p>The web allowed deployment of new clients and servers without registration or standardization.</p>
+<h3>Divergence from Reality for Media Types</h3>
+<p>Internet Media Types suffered from &quot;poor registration performance&quot;: </p>
+<ul class="text">
+  <li>Lots of file types aren't registered (no entry in IANA for file
+    types), even for file types that have been deployed for over a 
+    decade. For example, &quot;image/svg+xml&quot;, &quot;image/jp2&quot; and &quot;video/mp4&quot; are not registered. </li>
+  <li>For many file types that are registration, the registration is incomplete or incorrect (people
+    doing registration didn't understand 'magic number' or other
+    fields). </li>
+  <li>The actual content deployed or created by deployed software doesn't
+    match the registration. </li>
+</ul>
+<dl>
+  <dt>Sniffing: </dt>
+  <dd>the deplyment of content-type hasn't been consistent.  </dd>
+  <dt> &quot;willfull violations&quot;:</dt>
+  <dd> the registry values have been misused,
+    and the technical specification contains new values that do not
+    agree with the registry. </dd>
+</dl>
+<p>Some transports in the web architecture (file: and ftp: in particular) do not use MIME to label content, but the methods they use for determining the proper interpretation are not currently standards.</p>
+<h3>charsets mismatch</h3>
+<p>MIME includes provisions not only for file 'types', but also, importantly the &quot;character encoding&quot; used by text types: for example, simple US ASCII, Western European ISO-8859-1, Unicode UTF8. A similar vicious cycle also happened with character set labels: mislabeled content happily processed correctly by liberal browsers encouraged more and more sites to proliferate text with  mis-labeled character sets, to the point where browsers feel they *have* to guess the wrong label. </p>
+<blockquote class="text">
+  <dl>
+    <dt>default charset:</dt>
+    <dd>HTTP originally specified ISO-8859-1 as the default character set, not US-ASCII. This default value has not been widely practiced, and instead, many HTTP responses use whatever
+      is the default character encoding of the system providing the content, and the reciever of the content guesses the charset encoding through sniffing. This issue is currently still open in the HTTPBIS working group. [http&#8209;charset]</dd>
+    <dt>CRLF:</dt>
+    <dd>MIME specified that the default line-ending for lines in plain text documents (any with MIME types in the text/* branch) was a sequence of CR and LF. In the Web, content is usually sent with either LF only, CRLF sequences, or even (in some cases) bare CR without LF. Some purists insist that content that uses other line-ending conventions not be in the &quot;text/*&quot; tree, and insisting that people use &quot;application/*&quot; rather than &quot;text/*&quot;. </dd>
+    <dt>Embedded charset indicators:</dt>
+    <dd>Some media types (and especially those based on XML) have their own internal way of indicating charset encoding, but their MIME definitions also allow an external indicator. The availability of two sources of charset indication has caused confusion, the override rules are unclear, the rules are difficult to follow. </dd>
+    <dt>political issues:</dt>
+    <dd> There are sites that intentionally label content as
+      iso-2022-jp or euc-jp when it is in fact one of the Microsoft extension
+      charsets (e.g., for access to circled digits. This is an intentional
+      misuse of the definitions of the charsets themselves -- definitions which
+      originated at the national standards body level. </dd>
+  </dl>
+</blockquote>
+<p>Fragment identifiers are defined in web architecture but not required enough in [MediaRegUpdate].</p>
+<p>Finding.MIME: include MIME in update to WebArch(?)</p>
+<p>Finding.SniffMax: sniffing needs to be finished</p>
+<p>Finding.UpdateFileAndFtp: the W3C should sponsor work to standardize content-type handling for file: and ftp:, as well as updating the URI scheme definitions. (Well, maybe not ftp: but no alternative to file: or thumb drives).</p>
+<p>The following general registry findings apply in particular to the Internet Media Types and Charset registries: Finding.X, Finding.Y, ....</p>
+<p>Finding.SniffingInCharsetRegistry: note charset sniffing in registry?</p>
+<h3>Content Negotiation</h3>
+<p> The general idea of content negotiation is when party A communicates to party B, and the message can be delivered in more than one format (or version, or configuration), there can be some way of allowing some negotiation, some way for A to communication to B the available options, and for B to be able to accept or indicate preferences.
+  This kind of content negotiation happens all over. When one fax machine twirps to another when initially connecting, they are negotiating resolution, compression methods and so forth. In Internet mail, which is a one-way communication, the &quot;negotiation&quot; consists of the sender preparing and sending multiple versions of the message, one in text/html, one in text/plain, for example, in sender-preference order. The recipient then chooses the first version it can understand. </p>
+<p> HTTP added &quot;Accept&quot; and &quot;Accept-language&quot; to allow content negotiation in HTTP GET, based on Internet Media Types, and there are other methods explained in the HTTP spec. </p>
+<p> However, content negotiation based on media types alone has only been successful in limited contexts. It makes little sense to negotiate the character encoding in a world where UTF-8 support is widely deployed and covers everything.
+  While some sites take Accept-Language as a hint of application UI language, they don't really perform negotiation strictly per HTTP. Negotiated translations of the document (non-application-oriented) content of sites is relatively rare and people are often better off picking a translation manually. Negotiating the file format (e.g. HTML vs. Word vs. PDF) doesn't really happen: people want to make an explicit choice of downloading an MS Office or PDF depending on the goals they have that moment, instead of letting software pick a format for them. Negotiation of HTML vs. XHTML happens but is rare in the big picture and rarely offers true value to users. </p>
+<h3>Polyglot and Multiview</h3>
+<p> There are some interesting additional use cases which add to the design requirements: </p>
+<ul class="text">
+  <li> &quot;Polyglot&quot; documents:  A 'polyglot' document is one which is some data which can be treated as two different Internet Media Types, in the case where the meaning of the data is the same. This is part of a transition strategy to allow content providers (senders) to manage, produce, store, deliver the same data, but with two different labels, and have it work equivalently with two different kinds of receivers (one of which knows one Internet Media Type, and another which knows a second one.) This use case was part of the transition strategy from HTML to an XML-based XHTML, and also as a way of a single service offering both HTML-based and XML-based processing (e.g., same content useful for news articles and Web pages. </li>
+  <li>&quot;Multiview&quot; documents: This use case seems similar but it's quite different. In this case, the same data has very different meaning when served as two different content-types, but that difference is intentional; for example, the same data served as text/html is a document, and served as an RDFa type is some specific data. </li>
+</ul>
+<h3>Fragment identifiers</h3>
+<p> The Web added the notion of being able to address part of a
+  content and not the whole content by adding a 'fragment identifier' to
+  the URL that addressed the data. Of course, this originally made sense
+  for the original Web with just HTML, but how would it apply to other
+  content. The URL spec glibly noted that &quot;the definition of the
+  fragment identifier meaning depends on the Internet Media Type&quot;, but
+  unfortunately, few of the Internet Media Type definitions included this
+  information, and practices diverged greatly. </p>
+<p>If the interpretation of fragment identifiers depends on the MIME
+  type, though, this really crimps the style of using fragment
+  identifiers differently if content negotiation is wanted. </p>
+<h3>Sniffing security uses scriptability info</h3>
+<p>If the Internet Media Type registry is more explicit about which kinds of content contain what kind of scriptability access, then the specifications for sniffing can reference the Internet Media Type registry to determine what kinds of sniffing constitute a 'privelege upgrade'. </p>
+<p>Note that all sniffing can be a priviledge upgrade, if there is a buggy recipient, although bugs can be fixed, but spec violations are a problem. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr />
+<h2>Acknowledgements</h2>
+<p>This document is the result of discussions among many 
+         individuals in the IETF and W3C. Special thanks to
+Henri Sivonen, Alexey Melnikov, Noah Mendelsohn.</p>
+<p>&nbsp;</p>
+<hr />
+   <h2>References</h2>
+<p>
+  
+  [BCP26]:
+  <a href="http://tools.ietf.org/html/bcp26">Guidelines for Writing an IANA Considerations Section in RFCs</a>, BCP 26, RFC ...</p>
+   <p>[IABext] <a href="http://tools.ietf.org/html/draft-iab-extension-recs-09">Design Considerations for Protocol Extensions</a> work in progress, Internet Draft</p>
+   <p>[Friendly] <a href="http://www.w3.org/wiki/FriendlyRegistries">Friendly Registries</a>, work in progress, Wiki Page, requirements and a place to gather explicit proposals</p>
+   <p>[HappyIana] https://www.ietf.org/mailman/listinfo/happiana</p>
+   <p>[mime-web-info] http://tools.ietf.org/html/draft-masinter-mime-web-info</p>
+<p> [LinkRelation] http://lists.w3.org/Archives/Public/www-tag/2011May/0006.html </p>
+   <p>[sniff] 
+  
+  
+  http://tools.ietf.org/html/draft-ietf-websec-mime-sniff </p>
+   <p>
+  
+[MediaTypeFinding] <a href="http://www.w3.org/2001/tag/2002/0129-mime">Internet Media Type registration, consistency of use</a>
+  TAG Finding 3 June 2002 (Revised 4 September 2002)</h2>
+<p>
+  
+  [MIMEGuidelines] <a href="http://www.w3.org/2002/06/registering-mediatype">Register an Internet Media Type for a W3C Spec</a> (W3C guidelines on registering types)</p>
+<p>
+  
+  
+[MediaRegUpdate] <a href="http://tools.ietf.org/html/draft-freed-media-type-regs">Media Type Specifications and Registration Procedures</a>, Intenet Draft, work in progress</p>
+<p>[NoX] X- parameters harmful (Peter St. Andre)</p>
+<p>[SpecUpdate] <a href="http://lists.w3.org/Archives/Public/www-tag/2009Oct/0075.html">Best Practice for Referring to Specifications Which May Update</a> [email draft, H. Thompson, C.M. Sperberg-McQueen]</p>
+<p>[VendorFlap]</p>
+<table width="99%" border="0">
+  <tr>
+    <td class="author-text" valign="top"><a name="HTML5-charset" id="HTML5-charset">[HTML5-charset]</a></td>
+    <td class="author-text">Hickson, I., &ldquo;<a href="http://www.w3.org/TR/html5/parsing.html#determining-the-character-encoding">HTML5: A vocabulary and associated APIs for HTML and XHTML (8.2.2.1 Determining the character encoding)</a>.&rdquo;</td>
+  </tr>
+  <tr>
+    <td class="author-text" valign="top"><a name="RFC1521" id="RFC1521">[RFC1521]</a></td>
+    <td class="author-text">Borenstein, N. and N. Freed, &ldquo;<a href="http://tools.ietf.org/html/rfc5521">MIME (Multipurpose Internet Mail Extensions) Part One: Mechanisms for Specifying and Describing the Format of Internet Message Bodies</a>,&rdquo; RFC&nbsp;1521.</td>
+  </tr>
+  <tr>
+    <td class="author-text" valign="top"><a name="RFC1522" id="RFC1522">[RFC1522]</a></td>
+    <td class="author-text">Moore, K., &ldquo;<a href="http://tools.ietf.org/html/rfc1522">MIME (Multipurpose Internet Mail Extensions) Part Two: Message Header Extensions for Non-ASCII Text</a>,&rdquo; RFC&nbsp;1522, September&nbsp;1993.</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<hr />
+<h2>Appendix A: List of extensibility points in W3C web specs</h2>
+<p>Can we make a (complete&gt;) list of extensibility points in W3C specifications that are implemented by a typical browser? And a table listing what kind of extensibility process is (a) specified (b) used in practice?</p>
+<ul>
+  <li>HTTP
+    <ul>
+      <li>request names</li>
+      <li>return codes</li>
+      <li>content type main type
+        <ul>
+          <li>content type parameter values for some parameters (e.g., charset)</li>
+        </ul>
+      </li>
+      <li></li>
+    </ul>
+  </li>
+  <li>HTML
+    <ul>
+      <li>link relations</li>
+      <li></li>
+    </ul>
+  </li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>...</li>
+  <li>URI
+    <ul>
+      <li>URI schemes'</li>
+    </ul>
+  </li>
+  <li>XSLT</li>
+  <li>XML</li>
+  <li>...</li>
+</ul>
+<hr />
+<h2></h2>
+<p>&nbsp;</p>
+<h2><a name="leftovers" id="leftovers">Appendix B: Left Over bits</a></h2>
+<p>Here are some notes from discussion not yet incorporated:</p>
+<p>Reasons for a &quot;registry&quot;:</p>
+<ol>
+  <li> to avoid conflict (main purpose for all of the methods)</li>
+  <li> to set a bar and set review -    you want to have a quality of anything introduced</li>
+  <li> to provide look-up</li>
+  <li>limit the number because there is a cost of    introducing each one</li>
+</ol>
+<p>For example, some protocol designers thought a new URI scheme could    cause a lot of extra work. For HTML tags, when you introduce a new    section, everyone needs to understand that who implements browsers.</p>
+<p> But if you add metadata, it's no skin of anyone's nose. so you have    2 situations - one on which you need whole community to get involved    and one in which anyone besides a sub-community can ignore.</p>
+<p>Only tangentially related to registry-based solutions, Mark    Nottingham quotes    ([12]http://lists.w3.org/Archives/Public/www-tag/2011Dec/0049.html)    Roy Fielding as calling mustUnderstand-based approaches &quot;socially    reprehensible&quot; we need a decision tree - questions to answer to    understand what kind of extension you're doing and which of these    techniques you should use</p>
+<p>Compound extensibility points: when a new version of an exensibility point defines a new context in which old extensibility points are interpreted. (This is &quot;willful violation&quot; territory, if not also &quot;sniffing&quot; territory).</p>
+<p>see discussion following   <a href="http://lists.w3.org/Archives/Public/www-archive/2011Nov/0009.html">http://lists.w3.org/Archives/Public/www-archive/2011Nov/0009.html</a></p>
+<p>&nbsp;</p>
+</body>
+</html>

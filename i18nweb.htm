@@ -1,0 +1,282 @@
+<HTML>
+<HEAD>
+<TITLE>Internationalization and Multilingualism in Web Standards</TITLE>
+</HEAD>
+<BODY>
+<H1><CENTER>Internationalization and Multilingualism in Web Standards</CENTER>
+</H1>
+<H2><CENTER>Larry Masinter</CENTER></H2>
+<H2><CENTER>Palo Alto Research Center</CENTER></H2>
+<H2><CENTER>November 1996<BR>
+</CENTER></H2>
+<HR><H1>Purpose of talk</H1>
+<UL>
+<LI>Overview of Web Standards
+<LI>Set context for Authoring,
+Management, Deployment domains
+<LI>Current status of infrastructure
+<LI>Open issues in I18N
+</UL>
+<HR><H1>First: What is the Web?</H1>
+<UL>
+<LI>One network, everyone on it
+<LI>Mixed modes of communication
+<LI>Multiple media
+</UL>
+<HR><H1>One Network, Everyone on it</H1>
+<HR><H1>Mixed modes of communication</H1>
+<UL>
+<LI>Publish, retrieve
+<LI>Send, recieve
+<LI>Broadcast, filter
+<LI>Interact in real time
+</UL>
+<HR><H1>For multiple media</H1>
+<UL>
+<LI>Text
+<LI>Graphics
+<LI>Video
+<LI>Audio
+</UL>
+<HR><H1>Who makes Web Standards? </H1>
+<UL>
+<LI>Standards organizations
+<LI>Consortia
+<LI>Companies
+<LI>Individuals
+</UL>
+<HR><H1>Kinds of web standards</H1>
+<UL>
+<LI>Content
+<UL>
+<LI> what are the objects we're
+moving around?
+</UL>
+<LI>Protocols
+<UL>
+<LI>how do they get moved?
+</UL>
+<LI>Naming
+<UL>
+<LI>how to reference something
+not in hand?
+</UL>
+</UL>
+<HR><H1>Standards for Web Content</H1>
+<UL>
+<LI>MIME
+<LI>HTML as a MIME type
+<LI>Internationalization issues
+</UL>
+<HR><H1>MIME:<BR>
+MultiPurpose Internet Mail Exchange</H1>
+<UL>
+<LI>Originally designed for mail
+<LI>Allows
+<UL>
+<LI>Multiple media
+<LI>Multiple character sets
+<LI>Multiple languages
+</UL>
+</UL>
+<HR><H1>Internet Media Types (&quot;MIME types&quot;)</H1>
+<UL>
+<LI>Standard way of naming data formats
+<LI>Hierarchical structure with
+parameters
+<LI>Applications use MIME to decide
+how to interpret data (instead of file extension)
+<LI>text, image, audio, video,
+multipart, application
+</UL>
+<HR><H1>MIME Major Types</H1>
+<UL>
+<LI><TT><B>text</B></TT>:
+ sequences of characters
+<LI><TT><B>image</B></TT>:
+bitmaps in various forms, e.g., gif, jpeg, tiff, png
+<LI><TT><B>audio</B></TT>:
+ sounds in various forms
+<LI><TT><B>video</B></TT>:
+ animations
+<LI><TT><B>message</B></TT>,
+<TT><B>multipart</B></TT>:
+special purpose
+<LI><TT><B>application</B></TT>:
+catch-all
+</UL>
+<HR><H1>MIME subtype</H1>
+<UL>
+<LI>Standard registry: &quot;<TT><B>image/tiff</B></TT>&quot;,
+&quot;<TT><B>application/postscript</B></TT>&quot;
+<LI>New registry rules recently
+approved
+<LI>&quot;<TT><B>application/vnd.ms-word</B></TT>&quot;
+</UL>
+<HR><H1>MIME Text: Characters</H1>
+<UL>
+<LI>may have &quot;<TT><B>charset</B></TT>&quot;
+parameter
+<LI>charset determines both Character
+Encoding Scheme and Repertoire
+<LI><TT><B>text/html</B></TT>
+issues in Domain 3 (Authoring)
+</UL>
+<HR><H1>Charset issues</H1>
+<UL>
+<LI>Cannot standardize on &quot;Unicode&quot;
+<LI>Local applications will want
+national encodings
+<LI>Han Unification, other political
+difficulties
+</UL>
+<HR><H1>Primary issue</H1>
+<UL>
+<LI>Standardize when possible (ISO 10646)
+<LI>Label when you can't (use
+MIME charset registration)
+<LI>Don't make recipients guess
+</UL>
+<HR><H1>MIME <TT><B>Content-Language</B></TT>
+</H1>
+<UL>
+<LI>Uses standard codes for identifying
+(primary) language of content
+<LI>Completely optional
+</UL>
+<HR><H1>Standards for network protocols</H1>
+<UL>
+<LI>Electronic Mail (<TT><B>SMTP</B></TT>)
+<LI>Web Browsing (<TT><B>HTTP</B></TT>)
+<LI>Broadcast communication (<TT><B>NNTP</B></TT>)
+<LI>and more..
+<UL>
+<LI>directory access (<TT><B>LDAP</B></TT>)
+<LI>interactive sessions (<TT><B>TELNET</B></TT>)
+<LI>&#133;.
+</UL>
+</UL>
+<HR><H1>HyperText Transfer Protocol (HTTP)</H1>
+<UL>
+<LI>Started as a simple protocol, designed for the
+1990 vision of the World Wide Web
+<LI><TT><B>http://widget.com/product.html</B></TT>
+<UL>
+<LI>Open connection to widget.com
+<LI>send &quot;<TT><B>GET
+/product.html</B></TT>&quot;
+<LI>read headers
+<LI>read body
+<LI>close connection
+</UL>
+</UL>
+<HR><H1>HTTP Improvements</H1>
+<UL>
+<LI>Performance
+<LI>Reliability
+<LI>Caching
+<LI>Persistent connections
+<LI>Content negotiation
+</UL>
+<HR><H1>Simple content negotiation in HTTP</H1>
+<HR><H1>Transparent negotiation in HTTP</H1>
+<HR><H1>Dimensions of negotiation</H1>
+<UL>
+<LI>Language (<TT><B>Accept-Language</B></TT>)
+<LI>Character set (<TT><B>Accept-Charset</B></TT>)
+<LI>Capabilities to handle media
+(<TT><B>Accept</B></TT>)
+<LI>Brand of software (<TT><B>User-Agent</B></TT>)
+</UL>
+<HR><H1>Issues for HTTP Internationalization and Multilingualism</H1>
+<UL>
+<LI>deployment
+<LI>overhead of negotiation
+<LI>interaction with authoring,
+caching
+</UL>
+<HR><H1>Identifiers in the Web</H1>
+<UL>
+<LI>URL: locations
+<UL>
+<LI>New York Public Library, second
+floor, third aisle, second shelf, third book from left
+</UL>
+<LI>URN: location-independent
+names
+<UL>
+<LI>QP:475.L95;  ISBN:0-19-854529-0
+</UL>
+<LI>URC: descriptions
+<UL>
+<LI>genre: book, title: The Ecology
+of Vision;<BR>
+author: J.N.Lythgoe; Date: 1979;<BR>
+Publisher: Clarendon Press, Oxford
+</UL>
+</UL>
+<HR><H1>URL Requirements </H1>
+<UL>
+<LI>An object that describes the location of a resource
+<LI>Global scope
+<LI>parsable
+<LI>transportable in many contexts
+<LI>extensible
+<LI>not loaded with other information
+</UL>
+<HR><H1>URN Requirements</H1>
+<UL>
+<LI>global scope
+<LI>persistent
+<LI>scalable
+</UL>
+<HR><H1>URC: Uniform Resource Characteristics</H1>
+<UL>
+<LI>Syntax for carrying metadata
+<UL>
+<LI>Title
+</UL>
+<LI>A standard set of tags useful
+for describing Internet resources
+</UL>
+<HR><H1>Some unsolved problems</H1>
+<UL>
+<LI>Internationalization (M. D&uuml;rst)
+<LI>things go away
+<LI>pimples.com
+<LI>Apple Computer and Apple Music
+<UL>
+<LI>conflicts over short names
+</UL>
+<LI>urn:hdl:MTV/I_quit
+<UL>
+<LI>how does authority migrate?
+</UL>
+</UL>
+<HR><H1>Other protocols in the Web</H1>
+<UL>
+<LI>Access control and ratings
+<UL>
+<LI>Rating of entertainment content
+for adult themes
+<LI>How to deal with cultural
+differences
+<LI>Multiple rating services
+</UL>
+</UL>
+<HR><H1>Summary: Internationalization and Multilingualism in Web Standards
+</H1>
+<UL>
+<LI>Content: good progress
+<LI>Protocols: are they enough?
+<LI>Naming: is there a solution?
+<LI>Standards lead deployment
+</UL>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1043620-1";
+urchinTracker();
+</script>
+</BODY>
+</HTML>

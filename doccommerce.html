@@ -1,0 +1,572 @@
+<!doctype html public "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>Document Management and Electronic Commerce</TITLE>
+</HEAD>
+<BODY>
+<H1>Document Management and Electronic Commerce</H1>
+
+<P>
+October 31, 1995
+<P>
+<B>Larry Masinter &lt;masinter@parc.xerox.com&gt;</B><HR>
+
+<H2>Abstract</H2>
+
+<P>
+<STRONG>The global network is changing the way every business
+works. In particular, new networked applications will affect the
+way in which organizations work with documents.
+Currently, electronic document management systems are
+used to facilitate document-centered work on networks inside
+single organizations. These kinds of applications will expand to
+include groups outside the enterprise. </STRONG>
+<HR>
+
+<H2>Introduction</H2>
+
+<P>
+The global network is changing the way every business works. In
+particular, new networked applications will affect the way in
+which organizations work with documents.
+Currently, electronic document management systems are used to
+facilitate document-centered work on networks inside single organizations.
+These kinds of applications will expand to include groups outside
+the enterprise.
+<P>
+This paper is in three parts:
+<UL>
+<LI>A brief overview of electronic document management.
+<LI>A review of the assumptions for future networking capabilities
+and electronic commerce.
+<LI>An overview of four kinds of document management applications,
+and an exploration of the ways in which the network will change
+the nature of document management for each of those applications.
+</UL>
+
+<H2>1. Document Management: Overview</H2>
+
+<P>
+Document management systems are designed to help individuals,
+workgroups and large enterprises manage their documents stored
+in electronic form. Document management systems provide a means
+to store, easily locate and retrieve, and exercise control over
+document-based information through the document's life cycle within
+the context of a group or large organization.
+<P>
+
+The field of electronic document management can be confusing because
+different terms are used, referring to either specialized
+applications, technical components, or particular types of media the
+systems are used to manage. For example, some systems are described as
+<i>publication management</i> systems, because they are geared toward
+aiding in the publication process. Some systems are marketed as
+<i>information retrieval</i> products, as information retrieval is an
+important component of document management. Systems that are oriented
+primarily toward the management of scanned images are described as
+<i>image management</i>. However, all of these can be considered kinds
+of <strong>document management</strong> systems, and all will change
+because of the changes in networking technology sweeping the world.
+
+<H3>Document Management Components</H3>
+
+<P>
+Document management systems combine a number of functional components.
+<STRONG>Authoring</STRONG> components integrate the user's desktop
+creation tools with the document management system, to simplify the
+entry of the user's work into the management system.
+<STRONG>Acquisition</STRONG> components aid in the bulk import of
+documents that originate outside the system, e.g., by allowing entry
+of paper documents using scanners, fax, or conversion from externally
+acquired electronic media.
+
+<P>
+
+A variety of <STRONG>information retrieval</STRONG> methods are
+employed to find relevant or correct documents within large
+repositories, either by full-text retrieval, semantic analysis, or
+probabilistic methods. Document management systems usually feature
+searching in repositories of documents both by context and by content.
+Contextual information for a document is derived from outside the
+document itself: for example, who wrote it, when was it written, the
+workgroup that produced it. Content search uses the words in the
+document itself, or the document's structure, for retrieval.
+
+<P>
+
+<STRONG>User interface</STRONG> components interact with the
+information retrieval facilities in the server to support
+<STRONG>search</STRONG>.  <STRONG>Information visualization</STRONG>
+is a method of using advanced graphic capabilities to help users
+visualize larger information spaces and structures.  <STRONG>Workspace
+management</STRONG> is a method of using two or three dimensional
+images to help users organize the state of their work. These
+components interact with the document management components through a
+network interface.
+
+<P>
+
+Document <STRONG>library services</STRONG> keep track of the attributes
+of documents as they are being worked on in various parts of the
+organization. For example, a user can <i>check out</i> a document,
+reserving it so that no one else can edit it at the same time. When
+the revision is complete, the user <i>checks in</i> the document,
+letting others access and revise the new version. These kind of
+control mechanisms are important for keeping consistency in the
+creation/review cycle when many people are engaged in working on a
+common corpus.
+
+<p>
+
+Document management systems are <strong>distributed</strong>. Users at
+PCs on a network access a common repository of documents on one or
+several servers. For large networks, or for users with laptop
+computers that may operate without being connected to the network,
+distributed system transaction technology is used to keep updates and
+additions consistent. 
+
+<P>
+
+While document libraries and repositories keep track of documents
+and their attributes, <STRONG>workflow</STRONG> components keep
+track of users, tasks, work queues, audit trails and the like.
+That is, it models the work of the organization  in which the
+documents participate.
+
+<H2>2. Global Networking Trends: Overview</H2>
+
+<P>
+
+This section lays out some of the assumptions about the future
+direction of the global information infrastructure that will support
+new document management applications.
+
+<P> The Internet is growing at an enormous rate, and on-line services
+and corporate networks are interconnecting. The conclusion of this
+evolution will be a system where there is <STRONG>one network</STRONG>
+for connecting computers, services, and people. As with the Internet
+today, the future network will be a federation of independently
+operated networks; some components of those networks will have special
+services, but interactive services will be available across the entire
+network.
+
+<P> Two fundamental capabilities are being developed that allow for
+secure communication across the global network. First is the ability
+to <STRONG>authenticate</STRONG> the source of a message or network
+connection, so that the identity of a (potential) user can be assured.
+Second is the ability to have <STRONG>secure communication</STRONG>
+with that user, without anyone else being able to eavesdrop or modify
+the conversation. These capabilities require not only the deployment
+of cryptographic software but also the development of a world-wide
+infrastructure for determining identity and associating network
+presence with individuals.
+
+<P>
+Several developments in technology and infrastructure for managing
+<STRONG>copyright</STRONG> and intellectual property are also
+important for some sectors. This includes both systems and institutions,
+and a legal framework for describing, tracking, and credibly accounting
+for use of intellectual property. These developments are accompanied
+by changes in the legal and regulatory environment.
+<P>
+Finally, <STRONG>distributed payment</STRONG> methods are being
+promulgated by consortia of banks and credit agencies, network
+providers, and others offering accounting and billing services.
+These services allow for secure transactions and reliable settlement
+of accounts between buyers and sellers.
+<P>
+These elements of electronic infrastructure are enabling a very
+large variety of new systems for electronic commerce: the ability
+to trade in services and goods across the world. The word <I>trade</I>
+is perhaps too narrow, as the commerce that it engenders is not
+only commercial, but also intellectual and social.
+<P>
+One particular kind of trade that is more affected than any others
+is trade in documents. That is because, of all the goods and services
+that might be traded, documents can be transmitted across a network,
+and document services can reasonably be performed by others remotely,
+while most other goods and services require additional transportation
+of physical material in order to complete.
+<H2>3. Document Management and Electronic Commerce</H2>
+
+<P>
+The combination of electronic commerce and document management
+technologies will give rise to new market segments and opportunities.
+The opportunities will differ according to the kind of use they
+are intended to support. Four broad categories of document management
+are described, along with the opportunities for applying electronic
+commerce in those domains.
+<H3>3.1. Document as Memory: Knowledge workers</H3>
+
+<P>
+For knowledge workers, document management systems are used to
+organize and keep track of the state of the organization and the
+communication between individuals.
+<P>
+Office automation systems are used for creating create memos,
+letters and status reports. However, repositories of these documents
+contain the state and interconnection of an organization. Workgroups
+and enterprises invest in document management systems as a way
+to help them keep track of the work that they have done and are
+in the process of doing, in order to avoid redundancy and duplication
+of effort.
+<P>
+In addition, workgroup document management systems offer library
+services for preserving update consistency, similar to check-out
+and check-in capabilities of software source code control systems.
+When a user checks out a document, the system locks the document
+from other users' changes. When the document is checked back in,
+the document management system makes it available for others to
+revise. Along with maintaining update consistency, the document
+management application tracks revisions in a multi-author/editor
+setting.
+<P>
+Some current applications of document management in this context
+include:
+<UL>
+<LI>Product organizations keep track of customer complaints and
+suggestions received by phone, mail, or fax, and maintain it in
+a common database for review by developers.
+<LI>Law firms keep copies of contracts, depositions, and previous
+correspondence with clients. For example, a large multinational
+firm believes it has an obligation to offer similar legal advice
+to all clients in similar situations; the company wants the system
+to keep track of all material as it is produced in each of its
+offices.
+<LI>A marketing department might manage competitive profiles,
+references to magazine and newspaper articles and product information
+on-line for quick reference.
+</UL>
+
+<H4>Opportunities</H4>
+
+<P>
+The trend to re-engineer organizational practices using document
+management is spreading. Meanwhile, the boundaries of organizations
+are blurring, to the point where traditional document management
+systems are inadequate. Although currently most work-groups are
+connected on a LAN or enterprise network, there are many situations
+where the need to share state crosses those boundaries.
+<P>
+It is for this reason that many groupware products are adding
+Internet capabilities, so that ordinary users with a forms-capable
+web browser might participate.
+<P>
+Some current examples of network-based distributed document systems
+include:
+<UL>
+<LI><STRONG>Company and consumer feedback</STRONG> More and more
+organizations are receiving customer correspondence from the network,
+containing feedback from their customers. These electronic support
+forums are an important technical base of descriptions of problems
+and solutions for the company and its customers. While product
+support groups for computer products have long been found on on-line
+services such as CompuServe and Prodigy, the trend is spreading
+to other industries and to the Internet.
+<LI><STRONG>Distributed workgroups.</STRONG> Increasingly, conferencing
+systems are being used for managing the distributed job of cross-organizational
+document-intensive collaboration.<BR>
+For example, the <A href="http://ednet.gsfc.nasa.gov/www95/review/reviewers/processes.html        ">program committee of the Fourth World Wide Web conference</A>
+used the Internet to manage the entire process of paper submission,
+review, reviewer comments, updates, and responses to authors.
+<BR>
+Similarly, the <A href="http://www.gii-awards.com/">National Information Infrastructure Awards</A>
+committee program used a &quot;virtual judging environment&quot;
+suite of software for allowing reviewers to rate, evaluate, and
+publish their ratings of sites.
+</UL>
+
+<P>
+The mechanisms of electronic commerce will allow the creation
+of impromptu organizations geographically distributed who form
+organizations for a common purpose. Thus, trade associations,
+consortia, professional organizations might employ workgroup document
+management technology and groupware to coordinate their efforts.
+<H3>3.2 Document as Process: Insurance, Financial Service, Government
+</H3>
+
+<P>
+Some organizations have well-defined work processes that deal
+with a flow of paperwork. Workflow software is used to manage
+the organizational process, route documents along the steps of
+the process.
+<P>
+The workflow software tracks the progress of documents as they
+are routed through an organization and processed by individuals
+fulfilling process roles. While document repositories are often
+organized around the documents, their attributes, and repositories
+of them, workflow systems are centrally focused on users, roles,
+tasks, work queues, and processes.
+<UL>
+<LI>Insurance companies use workflow to handle claims adjustment.
+<LI>Financial services companies use workflow in order to regularize
+the handling of loan approvals.
+<LI>Government offices use workflow to handle the routing of filing,
+approvals, and other processes that involve large number of applications,
+clerical staff, and a need for fair and equitable handling of
+all involved.
+<LI>Commercial organizations might use workflow to handle order
+entry, delivery, and collection.
+</UL>
+
+<P>
+In general, organizations use workflow to minimize the delays
+in their work processes. The primary opportunity for electronic
+commerce in workflow systems is the ability to include those outside
+the organization in the work itself. Some current examples include:
+<UL>
+<LI><STRONG>Order entry.</STRONG> Many manufacturing and sales
+organizations are integrating their workflow systems for processing
+orders and delivery with network interfaces. Whether ordering
+pizza, a hotel room, or computer parts, the process automation
+becomes much more valuable when there is not a company employee
+in the way between the customer and the product.
+<LI><STRONG>Fulfillment tracking.</STRONG> The next step beyond
+order entry is to allow the customer to track their order directly
+on the network. FedEx has both custom software and an <A href="http://www.fedex.com/cgi-bin/track_it">interface using the world-wide Web</A>
+to allow customers to find out the status of their package delivery.
+</UL>
+
+<P>
+In each of these cases, the challenge is to merge the external
+user interface over the public Internet with the internal workflow
+processing steps of the organization.
+<P>
+As companies outsource work to independent contractors, the workflow
+might extend to include tasks performed by those contractors.
+The boundaries of enterprises are blurring, and this will require
+the transition of enterprise workflow to be able to deal with
+participants beyond the enterprise.
+<H3>3.3 Document for Product: Manufacturing and Service</H3>
+
+<P>
+Organizations that produce products also produce documents that
+accompany those products. While many of the steps of document
+production are the same, there is an essential difference: for
+these organizations, the documents are critical auxiliaries to
+the actual product that customers purchase from them. In these
+situations, the documents are still part of a production scenario,
+but the organization and management of the document construction
+are subsidiary to some other work process.
+<P>
+Electronic commerce will enhance the manufacturing and service
+segment in a large number of ways. However, in particular, it
+will have a profound impact on the way in which documents are
+managed within them.
+<UL>
+<LI>CALS  is Computer-aided Acquisition Logistics Support and
+now Continuous Acquisition and Life-Cycle Support. It is a Department
+of Defense (DoD) strategy for achieving effective creation, exchange,
+and use of digital data for weapon systems and equipment.<BR>
+Originally, it was intended that industry selling equipment to
+the government, whether missiles or tents, would provide all of
+the specifications, repair manuals and so on in electronic form.
+<BR>
+As a part of this effort, a large number of specification standards
+were created. Document management systems and databases were deployed
+to help vendors keep track of their documentation as it was being
+produced. This initiative was originally conceived as delivering
+its documentation in physical media (tape, disk). CALS created
+standard descriptions for CAD drawings, images of text, SGML-marked
+up text, reports.
+<LI>In a large aerospace company, almost every plane off its assembly
+line is different in configuration. The documentation for the
+repair and maintenance of the plane needs to match the configuration
+shipped. The document management system allows the configuration
+of the shipped documentation to match the product. As more and
+more manufacturers move into custom product delivery and just-in-time
+manufacturing, it has become increasingly important to have a
+system that can allow documentation to track the changes in the
+products. The documents produced are field service procedures
+and parts diagrams.
+<LI>Pharmaceutical companies are required to submit documentation
+about proposed new drugs, including data on clinical trials, and
+other evidence. The New Drug Application process is time consuming,
+and shortening the time for submission is critically important
+in shortening the approval process. The creation of application
+itself is linked to the process of testing.
+<LI>Financial services firms produce data about their products,
+fact sheets about investments, reports on mutual funds, etc. This
+information is a critical part of their service.
+</UL>
+
+<H4>Opportunities for Electronic Commerce in Product Documentation
+</H4>
+
+<P>
+Direct electronic communication with consumers will greatly improve
+the quality and responsiveness of the organizations to support
+their customers, especially with highly technical products. It
+improves customer satisfaction by making sure the right information
+gets to customers when and where they need it.
+<UL>
+<LI>In addition, manufacturers can obtain and reuse documentation
+components from their suppliers, and feed back requests for changes,
+greatly enhancing the communication path. In today's business
+climate, more and more companies are outsourcing critical components
+of their organizations' design or manufacturing work, and the
+ability to interact at will with suppliers is a critical capability.
+For example, chip companies can make their <A href=        "http://www.dalsemi.com/DocControl/Overviews.web/PnP_RTC/overview.html">data sheets</A>
+on the web. This trend is not restricted to the electronics or
+computer industry. For example, <A href="http://www.ge.com/gep/datasheets/LEXANFL2003.html">GE Plastics</A>
+makes their data sheets available on the net.
+<LI>In the building industry, a large number of vendors are making
+3-dimensional renderings of their products available as AutoCad
+plug-ins, enabling contractors, architects and planners to understand
+how their products will fit in the projects they are building.
+These `documents' are candidates for electronic document management
+in the future.
+</UL>
+
+<P>
+These efforts are critical to fulfilling the promise of electronic
+commerce. Companies with a wide range of products need to integrate
+the document management of on-line product information with the
+external network availability of that information to fulfill the
+promise. Electronic commerce mechanisms of digital signatures,
+time-stamping services, and the like are necessary to make this
+information secure and useful.
+<P>
+While document management systems have been used for the assembly,
+production, printing of catalogs, now those catalogs can be delivered
+on-line. The ability to deliver catalogs over the network means
+that it is possible to give consumers far more information than
+was previously available, in more detail, and in a more timely
+fashion. This is a positive move, but it will also require more
+diligence, as it is not acceptable to deliver out-of-date prices
+or specifications of discontinued items.
+
+<H3>3.4 Document as Product: Publishers and Education</H3>
+
+<P>
+For publishers, documents are their product. Whether newspapers,
+magazines, book publishers, academic press, or entertainment organizations
+distributing film, video, records, CDs or tapes, publishers produce
+and distribute documents in the same way that manufacturers produce
+and distribute physical goods.
+<P>
+Of all the industries empowered by electronic commerce, publishers
+are privileged, in that it is possible to deliver samples and
+actual product completely over the network without transmission
+of physical objects.
+<P>
+Publishers currently use document management system for document
+assembly, reuse, and quality control. However, the opportunities
+to extend their document management system to include authors
+and creators (as the source of their material) and consumers (using
+the network for distribution) is enormous.
+<P>
+Many publishers use document management today to aid in the production
+of their material. For example, textbook manufacturers produce
+varying versions of their material based on the market requirements
+in different regions. However, they reuse the same text. Document
+Management systems help in keeping track of all of the components.
+<H4>Opportunities for Electronic Commerce in Publishing</H4>
+
+<P>
+Publishers are extending their business to use the global network
+in a variety of ways:
+<UL>
+<LI>Ready availability of promotional material. It is possible
+over the network to deliver samples, excerpts, offer search, storage,
+backlist material in a way that is unprecedented. Bookstores,
+publishers, academic press all are promoting their products over
+the network.
+<LI><B>Order entry.</B> The next step beyond cataloging the products
+is to actually take orders over the network. Thus, many bookstores
+on the net allow ordering of documents.
+<LI><B>Distribution of product.</B> For those materials that are
+delivered to the ultimate consumer in physical form, it is still
+possible to use the world-wide network to deliver the product
+information to the point of manufacturing at time of need.
+<LI><B>Product delivery.</B> A number of trials for actual delivery
+of content are being undertaken. More progress in the areas of
+copyright management, usage monitoring, and copy protection will
+be necessary before publishers will be willing to move more aggressively
+in this way.<BR>
+Either access is restricted to subscribers (clients), usage is
+controlled and restricted by copyright, or the reproduction of
+the material is directed toward insuring that the integrity of
+the message is preserved, as in advertising.
+</UL>
+
+<P>
+Insofar as the document management systems used to aid in production
+can be extended to interconnect directly with end users and recipients,
+the reach of publishers will be enhanced.
+<P>
+However, publishers are limited in their ability to market final
+product on the network because of limitations in the technology,
+infrastructure, and legal protection afforded to intellectual
+property owners. A number of technology trends may help, though:
+<UL>
+<LI>Copy detection. The ability to either mark individual network
+copies of documents to detect an illicit copy or the source of
+an infringing one may help with auditing and copy management.
+<LI>Copyright management. The development of an infrastructure
+to allow payment of copyright fees to rights owners will help
+satisfy many of the worries of publishers.
+<LI>Mechanisms for recording, paying, and limiting the recipient's
+access to copyrighted material are being deployed
+</UL>
+
+<H2>Conclusions</H2>
+
+<P>
+In each of the areas, there are two ways to look at the growth
+opportunity. From the point of view of Internet  development and
+electronic commerce, document management facilities add a source
+of 'back-end' technologies. From the point of view of document
+management providers, the Internet and electronic commerce provide
+new ways to extend their products to reach beyond the workgroup
+and enterprise to the collaborator, customer or supplier. In each
+of these cases, the emerging network infrastructure will change
+the way in which organizations interact with others in ways that
+are both a challenge and an opportunity. 
+<H2>References</H2>
+
+<DL>
+<DT>[1]
+<DD><I>The Document Management Guide</I>, Interleaf, c.1994. &lt;<A href="http://www.ileaf.com/docman.html">http://www.ileaf.com/docman.html</A>&gt;
+<DT>[2]
+<DD>Paula Rooney, &quot;PC document management catches eye of
+big business&quot;, <I>PC Week</I>, May 18, 1992, v9 p45.
+<DT><A NAME="ref3">[3]</A> 
+<DD>Lisa Nadile, &quot;Document-management standards pave `open'
+path&quot;, <I>PC Week</I>, v11, n28, p8(1), July 18, 1994.
+<DT>[4]
+<DD>Carl Frappaolo, &quot;The CW guide to document management&quot;,
+<I>ComputerWorld</I>, April 10, 1995, p 92.
+<DT>[5]
+<DD>&quot;Workflow and Information management Streamline Document
+Control and Meet FDA Regulations&quot; http://www.xsoft.com/XSoft/DataSheets/fdaapp.html.
+<DT>[6]
+<DD>Novell Publications Server. (http://www.novell.com).
+<DT>[7]
+<DD>&quot;Lotus Notes and Business Process Improvement&quot;,
+Lotus Development Corporation, October, 1995. &lt;<A href="http://www.lotus.com/corpcomm/31e2.htm">http://www.lotus.com/corpcomm/31e2.htm</A>&gt;
+<DT>[8]
+<DD>J. Garris, &quot;Digging through your data&quot;, <I>PC Magazine</I>,
+v13, n19, pNE1(4), Nov 8, 1994.
+<DT>[9]
+<DD><I>Open Document Management API (ODMA) 1.0 specification</I>,
+WordPerfect Corporation. &lt;<A href="ftp://ftp.wordperfect.com/pub/wpapps/windows/odma/">ftp://ftp.wordperfect.com/pub/wpapps/windows/odma/</A>&gt;
+<DT>[10]
+<DD><I>CALS standard repository.</I> &lt;http://navysgml.dt.navy.mil/cals.html&gt;
+</DL>
+
+<H2>Acknowledgements</H2>
+
+<P>
+Many thanks to Janel Hopper, Beau Vrolyk, and Alan Brown for help
+with this paper.
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1043620-1";
+urchinTracker();
+</script>
+</BODY>
+
+</HTML>

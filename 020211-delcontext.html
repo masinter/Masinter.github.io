@@ -1,0 +1,301 @@
+<html>
+
+<head>
+
+<title>Position Paper - W3C Device Independence Workshop on Delivery Context</title>
+
+<link href="http://www.w3.org/StyleSheets/base.css" rel="stylesheet"
+
+  type="text/css" />
+
+</head>
+
+<body>
+
+<h1>Position Paper: Device Independence Workshop on Delivery Context<a href="http://www.w3.org/2001/12/2002-03-05-di-workshop.html"></a></h1>
+
+<a href="https://larrymasinter.net">Larry Masinter</a>, <a href="http://www.adobe.com">Adobe Systems Incorporated</a></h2>
+
+
+
+<h2>Background</h2>
+
+
+
+Adobe Systems Incorporated is a leading provider of products and
+
+services in support of <a href=
+
+"http://www.adobe.com/aboutadobe/pressroom/pressmaterials/networkpublishing/main.html"
+
+>network publishing</a>: "Publish anything, anywhere, on any device."
+
+
+
+
+
+<p> Adobe has been a leader in defining industry standard for
+
+device-independent representations, as the developer of Postscript,
+
+PDF and as a leader in many other industry standards.
+
+
+
+<p> Adobe has significant experience in the area of Delivery
+
+Context. For example, <a
+
+href="http://partners.adobe.com/asn/developer/pdfs/tn/5003.PPD_Spec_v4.3.pdf">Postscript
+
+Printer Description files</a> include detailed information about
+
+printer capabilities and characteristics. To support accurate color
+
+reproduction, <a
+
+href="http://www.adobe.com/support/techdocs/c9fe.htm">several
+
+technologies</a> are involved in
+
+describing the delivery context for color.
+
+
+
+<p> In the area of content description, Adobe has developed and
+
+released an open source implementation of its <a
+
+href="http://www.adobe.com/products/xmp/main.html">eXtensible Metadata
+
+Platform (XMP)</a>, based on RDF, which may include content
+
+characterizations.  
+
+
+
+<h2>Terminology</h2>
+
+
+
+It may be helpful to define terminology. <i>Author</i>,
+
+<i>publisher</i>, <i>distributor</i> and <i>viewer</i> are typically
+
+roles for people and organizations. <i>Sender</i>, <i>intermediary</i>
+
+and <i>receiver</i> are roles in the network architecture.  The
+
+<i>application</i> is <i>delivery</i> of <i>content</i> from the
+
+sender to the receiver. Intermediaries act as <i>agents</i> that
+
+receive content (acting as a receiver) and subsequently send it toward
+
+its ultimate destination (acting as a sender), while performing some
+
+value-added service such as caching or content <i>adaptation</i>.
+
+
+
+<p>
+
+<i>Delivery context</i> includes information about the receiver's
+
+<i>capabilities</i>, <i>characteristics</i> and <i>preferences</i>, as
+
+seen by or communicated to the sender (and possibly modified
+
+by intermediaries), and <i>content descriptions</i> within or
+
+associated with the content about the content itself. Architecturally,
+
+this contextual information can be used in several ways, including:
+
+
+
+<dl>
+
+  <dt> <i>Content adaptation</i>
+
+  <dd>The sender determines the
+
+  capabilities, characteristics or preferences (CCPs) of the
+
+  receiver or and adapts the content for the context.
+
+
+
+  <dt> 
+
+<i> Content selection</i>
+
+         <dd>An agent (sender, receiver or intermediary)
+
+  chooses among available variants for transmission (based on
+
+  matching receiver CCPs with content attributes).
+
+
+
+ <dt> 
+
+<i> Adaptive content 	</i> <dd> 
+
+The content itself contains scripted or
+
+  descriptive content alternatives.
+
+</ul>
+
+</dl>
+
+
+
+<h2>Position Statement</h2>
+
+
+
+When possible, it is far preferable to use a consistent
+
+device-independent content format as the primary carrier of
+
+content. Device independent representations have extraordinary
+
+advantages, both technically (e.g., better caching, reliability,
+
+ability to use digital signatures to verify authenticity) and
+
+operationally (minimizes necessary infrastructure to provide
+
+transformations, update versions of deployed software, maintenance of
+
+content adaptation, profile recognition, etc.)
+
+
+
+In situations where content adaptation is necessary,
+
+the following principles apply:
+
+<dl>
+
+  <dt> <b>Late adaptation, if at all</b>
+
+  <dd> 
+
+
+
+<p>
+
+  If it is necessary to provide content adaptation, because of
+
+  limitations of bandwidth or device computational power, the
+
+  adaptation should happen as late in the process as possible.
+
+  If necessary, device-independent formats should be enhanced
+
+  to provide hints for adaptation.
+
+</p></dd>
+
+  <dt> 
+
+<b> Uniform vocabulary</b></dt>
+
+  <dd> 
+
+<p>  We are not served well by specialized vocabularies devised
+
+  for single applications. Ultimately, content authors will
+
+  want broader contexts of delivery than whatever they're using
+
+  now; makers of software for receivers will want to adapt
+
+  or interpret a wide variety of content.</p><p>
+
+       It is not acceptable to let each implementation and
+
+       application choose its own vocabulary. Interoperability
+
+       suffers, and software complexity increases. Common
+
+       concepts should be expressed in common ways across
+
+       the entire spectrum of applications.
+
+</p></dd>
+
+
+
+  <dt> <b>Large-granularity features are better</b>
+
+  <dd> 
+
+<p>  The temptation to do fine-granularity negotiation between sender
+
+  and receiver is high, but ultimately, no one is served well by it.
+
+  Adapting content exactly for the color gamut of the receiver
+
+  or for the details of the font repertoire may be necessary, but
+
+  as a community the pressure should be on the receivers to adopt
+
+  complete solutions or, miniminally, have clear predetermined fallbacks.
+
+  The general experience has been that fine-grained
+
+  detailed content adaptation is problematic and difficult to support
+
+  and sustain.</p></dd>
+
+</dl>
+
+
+
+<h2>Personal History</h2>
+
+
+
+<p>I have been involved in the development of web standards since
+
+nearly the beginning of the web, contributing to the development of
+
+the fundamental standards underlying the web.  I have worked in the
+
+area of content negotiation and content adaptation even longer;
+
+beginning in the late 1980's with a content management and adaptation
+
+system called "System 33"; System 33 was influential in the
+
+development of content negotiation in the web architecture (see <a
+
+href="http://www.w3.org/Conferences/IETF92/WWX_BOF_mins.html">this
+
+1992 report</a>, for example). Among other work, I helped establish
+
+the <a
+
+href="http://www.imc.org/ietf-medfree/index.html">CONNEG
+
+work</a> within IETF (as a spin-off of work in the HTTP working
+
+group), and contributed to it and related standards.
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1043620-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>
+
+
+

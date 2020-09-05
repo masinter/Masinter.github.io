@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+	<head>
+
+<title>Gettys Plumber</title>
+  <link rel="stylesheet" href="/theme.css" />
+</head>
+
+
+
+<body>
+
+
+
+<h4>(Originally published in InfoWorld Electric.)
+	</h4>
+
+<p>Now that http:// is not only ubiquitous but hip, the World Wide Web's HTTP
+
+accounts for 70 percent of Internet traffic. <img alt="Jim Gettys holding a
+	plumber's helper" align="right" src="gettys.jpg" width="200" height="200">
+
+Sure, be grateful for this Internet plumbing that downloads your many wonderful
+
+Web pages, but be aware that in doing so, HTTP generates far too many
+
+unnecessary Internet packets. HTTP is one of the main reasons you often have to
+
+use your Web browser's prominent Stop button. HTTP 1.0 is seriously bogging the
+
+Internet down. UUNet's Mike O'Dell, last year's winner, refers to the currently
+
+deployed 1.0 version of HTTP as &quot;the Internet's bug number one.&quot;
+
+O'Dell has high praise for this year's Internet Plumber of the Year, Jim Gettys, for
+
+his work on the coming 1.1 version of HTTP, which is now in its final rounds of
+
+standardization, implementation, and deployment.</p>
+
+
+<h3>Sharing the credit</h3>
+
+<p>Jim Gettys wouldn't at first let <i>InfoWorld</i> give him our 1997 Internet
+
+Plumber of the Year. I had to agree to credit the whole team working on
+
+HTTP/1.1. Then Gettys had a hard time limiting the list of HTTP/1.1 team members and is
+
+clearly bent on sharing credit, which has to be one of the secrets of his
+
+	continuing success.</p>
+
+<p>According to Gettys, big contributors to HTTP/1.1 include Roy Fielding, at
+
+the University of California at Irvine, for putting the initial proposal
+
+together; Jeff Mogul, at Digital Equipment's Western Research Lab, for arguing
+
+persistent connections and caching; Henrik Frystyk Nielsen, at the World Wide
+
+Web Consortium (W3C), for serious design work and early implementations; Paul
+
+Leach, at Microsoft, for widespread contributions; Dave Kristol, at Lucent, for
+
+dealing with the cookie mess; and John Franks for digest authentication.</p>
+
+<p>Larry Massinter at the
+
+Xerox Palo Alto Research Center chairs the HTTP/1.1 working group of the
+
+Internet Engineering Task Force (IETF at <a href="http://www.ietf.org">http://www.ietf.org</a>).
+
+When I asked Massinter what he thought about <i>InfoWorld</i> recognizing Gettys, he quipped, &quot;I'm
+
+happy to be the plumber's helper.&quot;</p>
+
+<p>Gettys says there are many more HTTP/1.1 contributors, but I had to cut the
+
+list off at that point. If you've been left out, sorry -- it's my fault, and
+
+you're in good company with W3C's Tim Berners-Lee, also an HTTP/1.1 contributor
+
+and, by the way, the inventor of the Web.</p>
+
+	<h3>So who is Jim Gettys, and what is HTTP/1.1?</h3>
+
+<p>Gettys is employed by Digital, which is reported to be considering him for
+
+promotion in its Industry Standards and Consortia activity -- hope this award
+
+helps, Jim. For years, Gettys has been a visiting scientist at W3C at
+
+Massachusetts Institute of Technology's (MIT's) Laboratory for Computer Science.
+
+Of course, Gettys has his own Web pages at <a href="http://www.w3.org/People/Gettys">http://www.w3.org/People/Gettys</a>.</p>
+
+<p>Before, Gettys was best known as co-inventor (with Bob Scheifler) of MIT's X
+
+Window System.</p>
+
+<p>Gettys says he got much of his network applications experience working on X,
+
+which is a &quot;network transparent window system in which you can run
+
+applications on any machine in a network, something that Microsoft can't
+
+say.&quot; Gettys is proud of X and should be. I think of X as the previous
+
+generation, just before the Web -- of thin-client Internet software. Now Gettys
+
+is back with HTTP/1.1.</p>
+
+<p>Harvard's Scott Bradner, another prominent Internet plumber, agrees that
+
+Gettys' work on HTTP/1.1 is pivotal.</p>
+
+<p>&quot;Jim Gettys has been able to help bring peace to the IETF/W3C standards
+
+picture,&quot; Bradner says. &quot;He has just the right ability to get these
+
+types of ego-filled organizations to agree on how to divide up the work -- a
+
+very important ability if we are to make progress rather than making redundant
+
+protocol proposals.&quot; Bradner suggests we be clear that Gettys' HTTP work is
+
+done under the auspices of the IETF, not the W3C, not Digital, and certainly not
+
+MIT's Laboratory for Computer Science -- spoken like the 32-year Harvard man
+
+that Bradner is. You can find more about HTTP/1.1 at <a href="http://www.w3.org/Protocols">http://www.w3.org/Protocols</a>.</p>
+
+<p>In short, HTTP is the protocol by which your Web browser downloads pages when
+
+you give it a URL. Unfortunately, HTTP/1.0 opens and closes a TCP connection for
+
+each element of each Web page -- each block of text, each graphic -- and there
+
+are lots of them. HTTP downloading generates a large number of TCP opening and
+
+closing IP packets, which carry no data and waste a lot of time. Further, the
+
+connections that HTTP opens give TCP's congestion-control mechanisms too little
+
+time to work. The result is that all-too-familiar bogging down of Web response,
+
+many lost packets, and frequent recourse to your browser's Stop button. And
+
+HTTP's abuse of TCP/IP is only the beginning.</p>
+
+<h3>Next-generation HTTP</h3>
+
+<p>When the Web was only a physicist's dream in 1990, HTTP/1.0 was just fine,
+
+and that's a gross understatement. But as Marc Andreessen, Netscape, and you all
+
+have taken the Web to its dizzying heights, HTTP/1.0 sticks out like a sore
+
+thumb. Hence the need for the IETF to develop a &quot;next generation&quot; of
+
+HTTP (called HTTPng at <a href="http://www.ietf.org">http://www.ietf.org</a>),
+
+and in the meantime, a very important upgrade called HTTP/1.1.</p>
+
+<p>We gathered the HTTP/1.1 team on a large conference call and asked them what
+
+would do the most good for the Internet's leaky plumbing. They said I should
+
+encourage you to ask your suppliers of Internet server software and browsers to
+
+deploy good implementations of HTTP/1.1. Ask for it by name. Various
+
+implementations of HTTP/1.1 are now available in the major Web browsers and
+
+servers.</p>
+
+<p>But according to Gettys, it is too easy to do &quot;a compliant
+
+implementation of HTTP/1.1 which has most of the bad properties of 1.0 ... a
+
+good implementation does persistent connections, pipelining, and
+
+buffering.&quot; Not only does a good implementation of HTTP/1.1 reduce the
+
+Internet-clogging packets generated by your Web downloads -- by 50 percent to 90
+
+percent -- but when your HTTP/1.1-equipped browser hits an HTTP/1.1-equipped
+
+server, you'll see a substantial speeding up of Web access, reducing download
+
+times by 20 percent to 75 percent, Gettys says.</p>
+
+<p>So with your newfound extra time, send your congratulations to Gettys at <a href="mailto:jg@pa.dec.com">jg@pa.dec.com</a>.</p>
+
+<p>See why Mike O'Dell was <a href="http://www.infoworld.com/cgi-bin/displayArchives.pl?dt_iwe04-97_80.htm">1996
+
+Internet Plumber of the Year</a>.</p>
+
+<p>To learn more in the paper by Frystyk and others visit <a href="http://www.w3.org/pub/WWW/Protocols/HTTP/Performance">http://www.w3.org/pub/WWW/Protocols/HTTP/Performance</a>.</p>
+
+<p>Read Bob Metcalfe's succinct analysis of HTTP from last <a href="http://www.infoworld.com/cgi-bin/displayNew.pl?/metcalfe/bm033197.htm">March</a>.</p>
+
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1043620-1";
+urchinTracker();
+</script>
+</body>
+</html>
+

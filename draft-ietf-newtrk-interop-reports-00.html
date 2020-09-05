@@ -1,0 +1,509 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head><title>Formalizing IETF Interoperability Reporting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Formalizing IETF Interoperability Reporting">
+<meta name="generator" content="xml2rfc v1.30 (http://xml.resource.org/)">
+<style type='text/css'>
+<!--
+    body {
+        font-family: verdana, charcoal, helvetica, arial, sans-serif;
+        margin: 2em;
+        font-size: small ; color: #000000 ; background-color: #ffffff ; }
+    .title { color: #990000; font-size: x-large ;
+        font-weight: bold; text-align: right;
+        font-family: helvetica, monaco, "MS Sans Serif", arial, sans-serif;
+        background-color: transparent; }
+    .filename { color: #666666; font-size: 18px; line-height: 28px;
+        font-weight: bold; text-align: right;
+        font-family: helvetica, arial, sans-serif;
+        background-color: transparent; }
+    td.rfcbug { background-color: #000000 ; width: 30px ; height: 30px ;
+        text-align: justify; vertical-align: middle ; padding-top: 2px ; }
+    td.rfcbug span.RFC { color: #666666; font-weight: bold; text-decoration: none;
+        background-color: #000000 ;
+        font-family: monaco, charcoal, geneva, "MS Sans Serif", helvetica, verdana, sans-serif;
+        font-size: x-small ; }
+    td.rfcbug span.hotText { color: #ffffff; font-weight: normal; text-decoration: none;
+        text-align: center ;
+        font-family: charcoal, monaco, geneva, "MS Sans Serif", helvetica, verdana, sans-serif;
+        font-size: x-small ; background-color: #000000; }
+    /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+    div#counter{margin-top: 100px}
+
+    a.info{
+        position:relative; /*this is the key*/
+        z-index:24;
+        text-decoration:none}
+
+    a.info:hover{z-index:25; background-color:#990000 ; color: #ffffff ;}
+
+    a.info span{display: none}
+
+    a.info:hover span.info{ /*the span will display just on :hover state*/
+        display:block;
+        position:absolute;
+        font-size: smaller ;
+        top:2em; left:2em; width:15em;
+        padding: 2px ;
+        border:1px solid #333333;
+        background-color:#eeeeee; color:#990000;
+        text-align: left ;}
+
+     A { font-weight: bold; }
+     A:link { color: #990000; background-color: transparent ; }
+     A:visited { color: #333333; background-color: transparent ; }
+     A:active { color: #333333; background-color: transparent ; }
+
+    p { margin-left: 2em; margin-right: 2em; }
+    p.copyright { font-size: x-small ; }
+    p.toc { font-size: small ; font-weight: bold ; margin-left: 3em ;}
+    table.toc { margin: 0 0 0 3em; padding: 0; border: 0; vertical-align: text-top; }
+    td.toc { font-size: small; font-weight: bold; vertical-align: text-top; }
+
+    span.emph { font-style: italic; }
+    span.strong { font-weight: bold; }
+    span.verb, span.vbare { font-family: "Courier New", Courier, monospace ; }
+
+    span.vemph { font-style: italic; font-family: "Courier New", Courier, monospace ; }
+    span.vstrong { font-weight: bold; font-family: "Courier New", Courier, monospace ; }
+    span.vdeluxe { font-weight: bold; font-style: italic; font-family: "Courier New", Courier, monospace ; }
+
+    ol.text { margin-left: 2em; margin-right: 2em; }
+    ul.text { margin-left: 2em; margin-right: 2em; }
+    li { margin-left: 3em;  }
+
+    pre { margin-left: 3em; color: #333333;  background-color: transparent;
+        font-family: "Courier New", Courier, monospace ; font-size: small ;
+        text-align: left;
+        }
+
+    h3 { color: #333333; font-size: medium ;
+        font-family: helvetica, arial, sans-serif ;
+        background-color: transparent; }
+    h4 { font-size: small; font-family: helvetica, arial, sans-serif ; }
+
+    table.bug { width: 30px ; height: 15px ; }
+    td.bug { color: #ffffff ; background-color: #990000 ;
+        text-align: center ; width: 30px ; height: 15px ;
+         }
+    td.bug A.link2 { color: #ffffff ; font-weight: bold;
+        text-decoration: none;
+        font-family: monaco, charcoal, geneva, "MS Sans Serif", helvetica, sans-serif;
+        font-size: x-small ; background-color: transparent }
+
+    td.header { color: #ffffff; font-size: x-small ;
+        font-family: arial, helvetica, sans-serif; vertical-align: top;
+        background-color: #666666 ; width: 33% ; }
+    td.author { font-weight: bold; margin-left: 4em; font-size: x-small ; }
+    td.author-text { font-size: x-small; }
+    table.full { vertical-align: top ; border-collapse: collapse ;
+        border-style: solid solid solid solid ;
+        border-color: black black black black ;
+        font-size: small ; text-align: center ; }
+    table.headers, table.none { vertical-align: top ; border-collapse: collapse ;
+        border-style: none;
+        font-size: small ; text-align: center ; }
+    table.full th { font-weight: bold ;
+        border-style: solid ;
+        border-color: black black black black ; }
+    table.headers th { font-weight: bold ;
+        border-style: none none solid none;
+        border-color: black black black black ; }
+    table.none th { font-weight: bold ;
+        border-style: none; }
+    table.full td {
+        border-style: solid solid solid solid ;
+        border-color: #333333 #333333 #333333 #333333 ; }
+    table.headers td, table.none td { border-style: none; }
+
+    hr { height: 1px }
+-->
+</style>
+</head>
+<body>
+<table summary="layout" width="66%" border="0" cellpadding="0" cellspacing="0"><tr><td><table summary="layout" width="100%" border="0" cellpadding="2" cellspacing="1">
+<tr><td class="header">Network Working Group</td><td class="header">L. Masinter</td></tr>
+<tr><td class="header">Internet-Draft</td><td class="header">Adobe Systems</td></tr>
+<tr><td class="header">Expires: April 14, 2006</td><td class="header">October 11, 2005</td></tr>
+</table></td></tr></table>
+<div align="right"><span class="title"><br />Formalizing IETF Interoperability Reporting</span></div>
+<div align="right"><span class="title"><br />draft-ietf-newtrk-interop-reports-00.txt</span></div>
+
+<h3>Status of this Memo</h3>
+<p>
+By submitting this Internet-Draft,
+each author represents that any applicable patent or other IPR claims of which
+he or she is aware have been or will be disclosed,
+and any of which he or she becomes aware will be disclosed,
+in accordance with Section&nbsp;6 of BCP&nbsp;79.</p>
+<p>
+Internet-Drafts are working documents of the Internet Engineering
+Task Force (IETF), its areas, and its working groups.
+Note that other groups may also distribute working documents as
+Internet-Drafts.</p>
+<p>
+Internet-Drafts are draft documents valid for a maximum of six months
+and may be updated, replaced, or obsoleted by other documents at any time.
+It is inappropriate to use Internet-Drafts as reference material or to cite
+them other than as &ldquo;work in progress.&rdquo;</p>
+<p>
+The list of current Internet-Drafts can be accessed at
+<a href='http://www.ietf.org/ietf/1id-abstracts.txt'>http://www.ietf.org/ietf/1id-abstracts.txt</a>.</p>
+<p>
+The list of Internet-Draft Shadow Directories can be accessed at
+<a href='http://www.ietf.org/shadow.html'>http://www.ietf.org/shadow.html</a>.</p>
+<p>
+This Internet-Draft will expire on April 14, 2006.</p>
+
+<h3>Copyright Notice</h3>
+<p>
+Copyright &copy; The Internet Society (2005).</p>
+
+<h3>Abstract</h3>
+
+<p>
+This document suggests another
+way of reforming IETF standards process by formalizing the
+mechanism for interoperability reporting, as a way of
+facilitating standards development.  It establishes two kinds of
+reports: a 'Protocol Feature Set', which lays out the set of features
+from IETF specifications that constitute a protocol, and a
+'Protocol Implementation Report', which is submitted by an individual
+or group to report on implementation and interoperability testing.
+
+</p>
+<a name="anchor1"></a><br /><hr />
+<a name="rfc.section.1"></a><h3>1.&nbsp;Introduction</h3>
+
+<p>The basic idea is to create formal structures for
+    </p>
+<ul class="text">
+<li>("Protocol Feature Set") Describing the set of specifications, and the features within them, that constitute a single "protocol", from the point of view of testing interoperability. (See below for format &amp; publication process.)
+     
+</li>
+<li>("Protocol Implementation Report") Creating a standard way that individuals can report on implementation and interoperability testing of a protocol. (See below for format &amp; publication process.)
+      
+</li>
+</ul><p>
+    These structures can be used to enhance the IETF standards process in the following ways: </p>
+<ul class="text">
+<li>Working groups (or individuals) preparing specifications for
+          new protocols may
+         also prepare the initial Protocol Feature Set. The IETF
+         should publish these if they represent rough consensus.
+</li>
+<li>Working groups preparing specifications for updating existing
+         protocols or adding new options of features to an existing
+        protocol may prepare a proposed extension to an existing
+         published Protocol Feature Set. Again, updated Protocol
+         Feature Sets that represent community (rough) consensus
+         should be published. 
+</li>
+<li>Individuals or groups who have an implementation of a protocol,
+       and those who have tested interoperability between independent
+       implementations may prepare implementation reports (which
+       may include reports of successful interoperability).
+</li>
+<li>Implementation reports may contain comments about existing
+         specifications. Groups interested in updating existing
+         specifications to facilitate their advancement in standards
+         status may use comments within implementation reports
+         to give weight to "running code"; they may use the lack
+         of implementation of particular features as motiviation
+         for removal of those features in subsequent updates.
+</li>
+<li>The IETF may use the existence of reports of 
+          successful interoperability
+         by multiple independent implementations of every feature
+         within a specification as evidence for advancing that
+         specification. Note that specifications may require
+         updates in order to make them suitable for advancement,
+         as in current practice.
+</li>
+<li>Implementation reports may also include assertions about
+        widespread deployment of the implementations, and the
+        IETF may use these reports as part of the basis for
+        judgement of widespread deployment of protocol implementations
+        as a basis for advancement of specifications.
+       
+</li>
+</ul><p>
+  
+</p>
+<a name="anchor2"></a><br /><hr />
+<a name="rfc.section.2"></a><h3>2.&nbsp;Format of Protocol Feature Set</h3>
+
+<p>Requirements: </p>
+<ul class="text">
+<li>List of referenced technical specifications.
+</li>
+<li>List of features, where a feature is a specification with chapter, section, paragraph, or quoted text.
+</li>
+<li>A feature description may contain additional explanatory text, to clarify or otherwise elaborate the feature.
+</li>
+<li>A feature description should indicate whether implementation is REQUIRED or optional for the protocol.
+</li>
+<li>Protocols may define multiple roles (e.g., client/server/proxy). Protocol Feature Set can include sets of roles, 
+   and feature specifications can identify the roles for which the feature is appropriate.
+</li>
+<li>May include references to other Protocol Feature Sets which are REQUIRED or OPTIONAL
+</li>
+<li>Could be specified as an XML-based format, with text format automatically derived, and both XML and text published.
+</li>
+</ul><p>
+
+</p>
+<a name="anchor3"></a><br /><hr />
+<a name="rfc.section.3"></a><h3>3.&nbsp;Scope and Granularity of Protocol Feature Set</h3>
+
+<p>
+There is a great deal of judgement needed about how details to get in the protocol feature set.
+ At the coarsest granularity, a feature set could have a single feature, which listed a single specification,
+  at least for protocols with no options. How difficult it is to create the Protocol Feature Set depends a 
+  great deal on the quality of the original technical specifications. Protocol Feature Sets require
+  rough consensus before they are published. However, rough consensus may be judged by the willingness of
+  implementors to prepare Protocol Implementation Reports using the Protocol Feature Set framework.
+
+</p>
+<a name="anchor4"></a><br /><hr />
+<a name="rfc.section.4"></a><h3>4.&nbsp;Format of Protocol Implementation Report</h3>
+
+<p>
+Requirements: 
+
+</p>
+<ul class="text">
+<li>May not cover entire PFS.
+</li>
+<li>Identity of implementation. Relationship to other previously
+    reported implementations, if any.
+</li>
+<li>If any IPR noted for any technical specification referenced
+       in PFS, relationship of source of implementation to
+       owner of IPR and/or other exercises of license process.
+</li>
+<li>Optionally, assertions about deployment
+</li>
+<li>Version history, for implementation report updates
+</li>
+<li>Identity of author, relationship to implementation, IPR.
+</li>
+<li>If implementation report has been reviewed by someone else
+   (working group chair, interoperability event host), identity
+   of reviewer.
+</li>
+<li>For each feature: 
+<ul class="text">
+<li>Was feature implemented?
+</li>
+<li>If so, has feature been sucessfully tested as interoperable
+         with at least one independent implementation?
+</li>
+<li>Optionally, the identity of the other implementations against which
+     interoperability was successfully tested
+</li>
+<li>For asymmetric protocols (e.g., client/server, or
+       different roles), repeat for each role played.
+</li>
+<li>Optionally, a short comment about the way in
+       which the feature had to be interpreted to be interoperable.
+       This shouldn't be a place to publish a long article, however.
+      
+</li>
+<li>Could be specified as an XML representation, with text format
+         automatically derived, to facilitate tools for automatic merging
+         and summarizing implementation reports.
+</li>
+</ul> 
+</li>
+<li>If Protocol Feature Set contains references to other Protocol Feature Sets,
+   the Protocol Implementation Report may also reference corresponding
+   Protocol Implementation Reports.
+</li>
+<li>QUESTION: Is it a requirement to allow for anonomous implementation
+     reports, where the implementation is not specifically
+     identified? In some cases, interop events allow for this
+     because product managers don't want competitors to use
+     their implemetation reports in negative marketing.
+</li>
+</ul><p>
+
+</p>
+<a name="anchor5"></a><br /><hr />
+<a name="rfc.section.5"></a><h3>5.&nbsp;Process for publication of Protocol Feature Set</h3>
+
+<p>Authored against template. Should be reviewed by working group (if active)
+or IESG. Perhaps IETF last call not necessary? After all, proof is in whether there are 
+actually any implementations willing to report on it.
+</p>
+<p>Updates to a Protocol Feature Set could be proposed by listing the proposed delta.
+ In general, if specifications change, feature sets should be extended, not updated, 
+ unless there was some mistake. That is, the "feature" corresponds to the documented feature.
+</p>
+<a name="anchor6"></a><br /><hr />
+<a name="rfc.section.6"></a><h3>6.&nbsp;Process for publication of Protocol Implementation Report</h3>
+
+<p>Preferably produced by someone responsible for the implementation.
+ Perhaps could be reported by someone else, as long as actual implementor can update.
+May be updated at any time, old reports are still available. Updates can
+ include new information or correction to old information. Perhaps there could
+ be a mechanism for publishing comments on implementation reports.
+
+
+</p>
+<a name="anchor7"></a><br /><hr />
+<a name="rfc.section.7"></a><h3>7.&nbsp;Tools for viewing Protocol Feature Sets and Protocol Implementation Reports</h3>
+
+<p>If the format for submission of both kinds of reports are in XML, there could be tools
+for generating HTML and plain text versions of these reports. 
+</p>
+<a name="anchor8"></a><br /><hr />
+<a name="rfc.section.8"></a><h3>8.&nbsp;Tools for combining information for combined reports</h3>
+
+<p>
+To facilitate seeing the "whole picture", it would be useful to have some tools that would take the 
+information in the published Protocol Feature Sets and Protocol Implementation Reports and generate implementation
+ reports that could summarize, for each feature of a given protocol, </p>
+<ul class="text">
+<li>Whether it was not implemented
+</li>
+<li>How many implementations there were.
+</li>
+<li>How many implementations reported interoperability with
+    an independent implementation.
+</li>
+<li>The list of all comments about the feature.
+</li>
+</ul><p>
+
+
+</p>
+<a name="anchor9"></a><br /><hr />
+<a name="rfc.section.9"></a><h3>9.&nbsp;Updating IETF processes</h3>
+
+<p>Once we have provided a way of formalized interoperability reporting, we could consider ways
+ in which IETF RFC 2026 standards process could be updated to make use of these. For example,
+ we could consider automating
+ progression of specifications from Proposed Standard to Draft Standard
+if sufficient combined interoperability reports existed.  We would need to be
+clear about the minimum requirement for implementation reports.
+Alternatively,  we could consider removing "Draft Standard" as a formal approval step;
+and instead (automatically) report which Standards Track documents had adequate
+interoperability reports. 
+Since the IESG does not currently evaluate the accuracy of interoperability reporting, it would
+make it clearer that the judgment about the maturity of a protocol specification and its interoperable
+implementation is left to the reader of the specification and its interoperability reports.
+This would also simplify the decisions about "downreference", since references from
+widely implemented specifications to those with mixed implementation would not result
+in confusion. Finally, we could change the judgment of "full standard" from a judgement about the protocol 
+specification to a judgement about what constitutes "widespread deployment" and whether 
+the implementations reported had reached that status.
+</p>
+<a name="anchor10"></a><br /><hr />
+<a name="rfc.section.10"></a><h3>10.&nbsp;Comparison with ISD and SRD</h3>
+
+<p>Note that this section will be removed if this proposal advances.
+ 
+</p>
+<p>The idea for formalizing interoperability reporting was based
+on the ideas from ISDs and SRDs that we should have a single
+document that pulls together all of the specifications of
+a single "protocol". However, basing the full description of
+what constitutes a single "protocol" on the operational need
+to test interoperability creates a better justification for
+putting energy into the task, motivates a different category
+of individuals to work on it, and gives it an operational
+criteria for judging success.
+</p>
+<p>I imagine that a PFS wouldn't take much more work to author
+than an ISD.
+</p>
+<a name="anchor11"></a><br /><hr />
+<a name="rfc.section.11"></a><h3>11.&nbsp;Acknowledgements</h3>
+
+<p>Thanks to Sam and others who helped flesh out the idea.
+</p>
+<a name="rfc.references1"></a><br /><hr />
+<h3>12.&nbsp;Informative References</h3>
+<table width="99%" border="0">
+</table>
+
+<a name="rfc.authors"></a><br /><hr />
+<h3>Author's Address</h3>
+<table width="99%" border="0" cellpadding="0" cellspacing="0">
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Larry Masinter</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Adobe Systems</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">345 Park Ave</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">San Jose, CA  95110</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">US</td></tr>
+<tr><td class="author" align="right">Phone:&nbsp;</td>
+<td class="author-text">+1 408 536 3024</td></tr>
+<tr><td class="author" align="right">Email:&nbsp;</td>
+<td class="author-text"><a href="mailto:LMM@acm.org">LMM@acm.org</a></td></tr>
+<tr><td class="author" align="right">URI:&nbsp;</td>
+<td class="author-text"><a href="http://larry.masinter.net">http://larry.masinter.net</a></td></tr>
+</table>
+<a name="rfc.copyright"></a><br /><hr />
+<h3>Intellectual Property Statement</h3>
+<p class='copyright'>
+The IETF takes no position regarding the validity or scope of any
+Intellectual Property Rights or other rights that might be claimed
+to pertain to the implementation or use of the technology
+described in this document or the extent to which any license
+under such rights might or might not be available; nor does it
+represent that it has made any independent effort to identify any
+such rights.
+Information on the procedures with respect to
+rights in RFC documents can be found in BCP&nbsp;78 and BCP&nbsp;79.</p>
+<p class='copyright'>
+Copies of IPR disclosures made to the IETF Secretariat and any
+assurances of licenses to be made available,
+or the result of an attempt made to obtain a general license or
+permission for the use of such proprietary rights by implementers or
+users of this specification can be obtained from the IETF on-line IPR
+repository at <a href='http://www.ietf.org/ipr'>http://www.ietf.org/ipr</a>.</p>
+<p class='copyright'>
+The IETF invites any interested party to bring to its attention
+any copyrights,
+patents or patent applications,
+or other
+proprietary rights that may cover technology that may be required
+to implement this standard.
+Please address the information to the IETF at <a href='mailto:ietf-ipr@ietf.org'>ietf-ipr@ietf.org</a>.</p>
+<h3>Disclaimer of Validity</h3>
+<p class='copyright'>
+This document and the information contained herein are provided
+on an &ldquo;AS IS&rdquo; basis and THE CONTRIBUTOR,
+THE ORGANIZATION HE/SHE REPRESENTS OR IS SPONSORED BY (IF ANY),
+THE INTERNET SOCIETY AND THE INTERNET ENGINEERING TASK FORCE DISCLAIM
+ALL WARRANTIES,
+EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE
+INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED
+WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p>
+<h3>Copyright Statement</h3>
+<p class='copyright'>
+Copyright &copy; The Internet Society (2005).
+This document is subject to the rights,
+licenses and restrictions contained in BCP&nbsp;78,
+and except as set forth therein,
+the authors retain all their rights.</p>
+<h3>Acknowledgment</h3>
+<p class='copyright'>
+Funding for the RFC Editor function is currently provided by the
+Internet Society.</p>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1043620-1";
+urchinTracker();
+</script>
+</body></html>
+
